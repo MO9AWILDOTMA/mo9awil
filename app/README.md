@@ -1,49 +1,62 @@
-# NextJS and NextUI Landing Page Template
+# Saas UI - Next.js - landing page.
 
-You can deploy here directly to vercel [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/Siumauricio/landing-template-nextui)
+This is a free Next.js landing page template based on https://saas-ui.dev.
+Feel free to submit any feature requests. If you use this template please share what you've built [on Twitter](https://twitter.com/saas_js) 🚀.
 
-This is a template for NextJS and NextUI. 
+**[View demo](https://saas-ui-nextjs-landing-page.netlify.app/)**
 
-[NextJS](https://nextjs.org/) 
-[NextUI](https://nextui.org/)
+## Tech
 
-You can see the demo here: https://landing-template-nextui.vercel.app/
-For improve this template, you can create a pull request or open an issue here [Issues](https://github.com/Siumauricio/landing-template-nextui/issues) or [Pull Request](
-    https://github.com/Siumauricio/landing-template-nextui/pulls)
+- Next.js (App router)
+- Chakra UI
+- Saas UI
+- Typescript
 
-### Dark Mode
-![Landing Page Dark Mode](./public/Screenshot_2.png)
+## Features
 
-### Light Mode
-![Landing Page Light Mode](./public/Screenshot_3.png)
+- Feature blocks
+- Testimonials
+- Pricing tables
+- Log in and Sign up pages
+- FAQ
 
-- Hero Section
-- Features Section 1
-- Features Section 2
-- Features Section 3
-- Testimonials Section
-- CTA Section
-- Pricing Section
-- FAQ Section
-- Footer Section
-- Dark Mode Support
-- Full Responsive
+## Getting Started
 
-## For Run
+First, clone this repo and run `pnpm i`
 
-Install dependencies
+To start the app run:
 
-    
 ```bash
-npm install
+pnpm dev
 ```
 
-Start the server
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-    
-        
-```bash
-npm run dev
-```
+You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-Now you can visit https://localhost:3000 in your browser.
+## Configuration
+
+Configuration files to edit basic site information, add testimonials, faq and pricing table can be found in `/data`.
+
+## Learn More
+
+Find out more about Saas UI.
+
+- [Saas UI Documentation](https://saas-ui.dev/docs).
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## License
+
+MIT
