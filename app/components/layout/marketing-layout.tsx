@@ -4,13 +4,15 @@ import { Box, SkipNavContent, SkipNavLink } from '@chakra-ui/react'
 
 import { ReactNode } from 'react'
 
+import ArrowIcon from '#components/arrow-icon'
+import WhatsAppIcon from '#components/whatsapp-icon'
+
 import {
   AnnouncementBanner,
   AnnouncementBannerProps,
 } from '../announcement-banner'
 import { Footer, FooterProps } from './footer'
 import { Header, HeaderProps } from './header'
-import WhatsAppIcon from '#components/whatsapp-icon'
 
 interface LayoutProps {
   children: ReactNode
@@ -31,7 +33,8 @@ export const MarketingLayout: React.FC<LayoutProps> = (props) => {
         {children}
       </Box>
       <Footer {...footerProps} />
-            <WhatsAppIcon />
+      <WhatsAppIcon />
+      <ArrowIcon />
     </Box>
   )
 }
