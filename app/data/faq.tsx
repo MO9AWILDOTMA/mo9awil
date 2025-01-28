@@ -1,32 +1,33 @@
 import * as React from 'react'
 
 const faq = {
-  title: 'Frequently asked questions',
+  title: 'Questions Fréquemment Posées',
   // description: '',
   items: [
     {
-      q: 'How many products can I use Saas UI Pro for?',
+      q: 'Qu’est-ce que la domiciliation d’entreprise ?',
       a: (
         <>
-          The single license can be used for one commercial application or SaaS
-          product and unlimited internal tools. You can buy as many licenses as
-          you need. <br /> The unlimited license does not have any restrictions.
+          La domiciliation d’entreprise offre à votre société une adresse 
+          professionnelle enregistrée au Luxembourg. Ce service inclut la gestion du courrier, 
+          le transfert postal et l’utilisation de notre adresse pour la documentation officielle.
         </>
       ),
     },
     {
-      q: 'Can I use Saas UI Pro for client work?',
-      a: "Yes, that's totally up to you, as long as it fits the license you purchase.",
+      q: 'Combien de temps faut-il pour créer une société au Luxembourg ?',
+      a: 'Le processus de création d’entreprise prend généralement 2 à 3 semaines après la soumission de tous les documents requis. Cela inclut l’enregistrement, l’acquisition d’un identifiant fiscal et l’ouverture de compte bancaire.',
     },
     {
-      q: 'Can I use Saas UI Pro for Open Source projects?',
-      a: 'No currently not. A large part of Saas UI is already released under MIT license. We try to give back to the community as much as possible.',
+      q: 'Quels services comptables sont inclus dans le forfait annuel ?',
+      a: 'Notre forfait comptable annuel comprend la tenue de livres mensuelle, la préparation des déclarations fiscales, les états financiers, la gestion de la paie, les bilans trimestriels et la consultation pour l’optimisation fiscale.',
     },
     {
-      q: 'Does Saas UI include Figma, Sketch or other design files?',
-      a: 'No, Saas UI does not include any design assets. Maintaining design resources costs a lot of extra effort. We believe small teams can move much faster by designing directly in code, with help of Storybooks.',
+      q: 'Puis-je passer à un forfait supérieur plus tard ?',
+      a: 'Oui, vous pouvez passer à un forfait supérieur à tout moment. Nous proposons des solutions flexibles qui s’adaptent à la croissance de votre entreprise et à l’évolution de vos besoins.',
     },
   ],
-}
+};
+
 
 export default faq

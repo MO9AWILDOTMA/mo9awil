@@ -1,40 +1,39 @@
 export default {
-  title: 'Loved by tech people',
+  title: 'Trusted by Business Leaders',
   items: [
     {
-      name: 'Eelco Wiersma',
-      description: 'Founder Saas UI',
-      avatar:
-        'https://pbs.twimg.com/profile_images/1470742164024008706/k-eXHtu0_normal.jpg',
+      name: 'Karim El Mansouri',
+      description: 'CEO, Atlas Tech Solutions SARL',
+      avatar: '/static/images/avatar.jpg',
       children: (
         <>
-          “With SaaS UI I am able to produce high quality dashboard apps and
-          internal tools without a lot of design skills. The ROI really is
-          amazing.”
+          "Le service de domiciliation et la création de notre société au
+          Luxembourg ont été parfaitement gérés. Leur expertise nous a permis de
+          développer notre présence européenne en toute confiance."
         </>
       ),
     },
     {
-      name: 'Caroline Yahaya',
-      description: 'Fullstack Developer',
+      name: 'Leila Benjelloun',
+      description: 'Fondatrice, Maroc Innovation Hub',
       avatar: '/static/images/avatar2.jpg',
       children: (
         <>
-          “Saas UI allows me to build beautiful and functional UI super fast.
-          The components are very well thought out and the Next.js starter kit
-          saved me at least 100 hours of work.”
+          "En tant qu'entreprise marocaine cherchant à s'établir au Luxembourg,
+          leur accompagnement professionnel a été crucial. Le processus de
+          création d'entreprise a été simple et transparent."
         </>
       ),
     },
     {
-      name: 'Alberto Vazquez',
-      description: 'Frontend Engineer',
+      name: 'Omar Tazi',
+      description: 'Directeur Financier, Global Trade Maghreb',
       avatar: '/static/images/avatar3.jpg',
       children: (
         <>
-          “Saas UI gave us a perfect starting point for our project, having the
-          storybooks already set up with beautifully crafted components and
-          fully mocked pages was a treat.”
+          "Leurs services comptables et leur expertise fiscale sont
+          exceptionnels. Ils comprennent parfaitement les besoins spécifiques
+          des entrepreneurs marocains au Luxembourg."
         </>
       ),
     },

@@ -1,14 +1,16 @@
 'use client'
 
-import { AuthProvider } from '@saas-ui/auth'
-import { SaasProvider } from '@saas-ui/react'
+import { ChakraProvider, extendTheme } from '@chakra-ui/react'
+import { theme as baseTheme } from '#theme'
 
-import { theme } from '#theme'
+// You can extend the theme here if needed
+const theme = extendTheme(baseTheme)
 
-export function Provider(props: { children: React.ReactNode }) {
+export function Provider({ children }: { children: React.ReactNode }) {
   return (
-    <SaasProvider theme={theme}>
-      <AuthProvider>{props.children}</AuthProvider>
-    </SaasProvider>
+    <ChakraProvider theme={theme}>
+      {children}
+
+    </ChakraProvider>
   )
 }

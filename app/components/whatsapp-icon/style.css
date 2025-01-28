@@ -1,0 +1,17 @@
+/* components/WhatsAppIcon.module.css */
+.whatsappIcon {
+  position: fixed;
+  bottom: 100px;
+  right: 90px;
+  z-index: 1000;
+    transform: scale(1); /* Initial scale */
+  transition: transform 2s ease-in-out; 
+}
+.whatsappIcon:hover {
+  transform: scale(1.5);
+}
+
+.whatsappIcon a {
+  text-decoration: none;
+  color: inherit;
+}
