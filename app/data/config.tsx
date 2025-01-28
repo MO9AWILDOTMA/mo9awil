@@ -1,93 +1,82 @@
 import { Button } from '@chakra-ui/react'
 import { Link } from '@saas-ui/react'
 import { NextSeoProps } from 'next-seo'
-import { FaGithub, FaTwitter } from 'react-icons/fa'
+import { FaLinkedin } from 'react-icons/fa'
 import { FiCheck } from 'react-icons/fi'
+
 import { Logo } from './logo'
 
 const siteConfig = {
   logo: Logo,
   seo: {
-    title: 'Saas UI',
-    description: 'The React component library for startups',
+    title: 'Mo9awil.ma - Services aux Entreprises au Maroc',
+    description:
+      'Votre partenaire de confiance pour la domiciliation d’entreprise, la création de sociétés et les services de gestion au Maroc',
   } as NextSeoProps,
-  termsUrl: '#',
-  privacyUrl: '#',
+  termsUrl: '/conditions',
+  privacyUrl: '/confidentialite',
   header: {
     links: [
       {
         id: 'features',
-        label: 'Features',
+        label: 'Services',
       },
       {
         id: 'pricing',
-        label: 'Pricing',
+        label: 'Tarifs',
       },
       {
-        id: 'faq',
-        label: 'FAQ',
+        id: 'about',
+        label: 'À propos de nous',
       },
       {
-        label: 'Login',
-        href: '/login',
-      },
-      {
-        label: 'Sign Up',
-        href: '/signup',
+        label: 'Commencer',
+        href: '/contact',
         variant: 'primary',
       },
     ],
   },
   footer: {
-    copyright: (
-      <>
-        Built by{' '}
-        <Link href="https://twitter.com/Pagebakers">Eelco Wiersma</Link>
-      </>
-    ),
+    copyright: <>© 2024 mo9awil.ma. Tous droits réservés.</>,
     links: [
       {
-        href: 'mailto:hello@saas-ui.dev',
+        href: 'mailto:contact@votresociete.ma',
         label: 'Contact',
       },
       {
-        href: 'https://twitter.com/saas_js',
-        label: <FaTwitter size="14" />,
-      },
-      {
-        href: 'https://github.com/saas-js/saas-ui',
-        label: <FaGithub size="14" />,
+        href: 'https://linkedin.com/company/votresociete',
+        label: <FaLinkedin size="14" />,
       },
     ],
   },
   signup: {
-    title: 'Start building with Saas UI',
+    title: 'Lancez Votre Entreprise au Maroc',
     features: [
       {
         icon: FiCheck,
-        title: 'Accessible',
-        description: 'All components strictly follow WAI-ARIA standards.',
+        title: 'Adresse Professionnelle',
+        description: 'Adresse prestigieuse à Casablanca, Rabat, ou Tanger.',
       },
       {
         icon: FiCheck,
-        title: 'Themable',
+        title: 'Conformité Totale',
         description:
-          'Fully customize all components to your brand with theme support and style props.',
+          'Support complet pour la conformité légale et réglementaire marocaine.',
       },
       {
         icon: FiCheck,
-        title: 'Composable',
+        title: 'Support Expert',
         description:
-          'Compose components to fit your needs and mix them together to create new ones.',
+          'Équipe dédiée de professionnels en gestion et comptabilité.',
       },
       {
         icon: FiCheck,
-        title: 'Productive',
-        description:
-          'Designed to reduce boilerplate and fully typed, build your product at speed.',
+        title: 'Solution Complète',
+        description: 'Services intégrés pour votre entreprise au Maroc.',
       },
     ],
   },
-}
+};
+
 
 export default siteConfig

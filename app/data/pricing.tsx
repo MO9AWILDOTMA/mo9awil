@@ -1,36 +1,38 @@
-import { HStack, Text } from '@chakra-ui/react'
-
 export default {
-  title: 'Pricing for every stage',
+  title: 'Choisissez Votre Chemin Vers le Succès Entrepreneurial',
   description:
-    'Pay once and get life-time access to our high quality components.',
+    'Des solutions professionnelles pour établir et développer votre entreprise au Maroc',
   plans: [
     {
-      id: 'oss',
-      title: 'Open Source',
-      description: 'Basic compoents, perfect to get started.',
-      price: 'Free',
+      id: 'domiciliation',
+      title: 'Domiciliation Intelligente',
+      description: 'Adresse Professionnelle Premium dans des Emplacements Stratégiques',
+      price: '1500 MAD/an',
+      isRecommended: true,
       features: [
         {
-          title: 'MIT License',
+          title: 'Adresse Professionnelle Prestigieuse dans des Zones Stratégiques',
         },
         {
-          title: 'Authentication (Clerk/Supabase/Magic)',
+          title: 'Système Professionnel de Gestion du Courrier',
         },
         {
-          title: 'Form (react-hook-form)',
+          title: 'Gestion Sécurisée des Documents',
         },
         {
-          title: 'Modals manager',
+          title: 'Notifications en Temps Réel pour le Courrier',
         },
         {
-          title: 'Hotkeys',
+          title: 'Service de Réception Dédié',
         },
         {
-          title: 'Web3 components',
+          title: 'Accès à une Salle de Réunion (2h/mois)',
         },
         {
-          title: 'And much more...',
+          title: 'Pack Identité Visuelle de l’Entreprise',
+        },
+        {
+          title: 'Accès au Tableau de Bord Numérique 24/7',
         },
       ],
       action: {
@@ -38,77 +40,74 @@ export default {
       },
     },
     {
-      id: 'bootstrap',
-      title: 'Bootstrap',
-      description: 'Complete frontend stack for bootstrappers and small teams.',
-      price: 'Free',
-      isRecommended: true,
+      id: 'company-creation',
+      title: 'Pack Lancement d’Entreprise',
+      description: 'Simplifiez la Création de Votre Société',
+      price: '3000 MAD',
       features: [
         {
-          title: 'One project',
+          title: 'Enregistrement Rapide de Société (7-10 jours)',
         },
         {
-          title: 'One developer',
+          title: 'Préparation de Tous les Documents Légaux',
         },
         {
-          title: 'Advanced components',
+          title: 'Pack Domiciliation Intelligente Inclus',
         },
         {
-          title: 'Multiple themes',
+          title: 'Création d’un Identifiant Fiscal et Licence Professionnelle',
         },
         {
-          title: 'Next.js and Electron boilerplates',
+          title: 'Assistance pour l’Ouverture de Compte Bancaire',
         },
         {
-          title: 'Private discord community',
+          title: 'Certificats Digitaux (ICE, RC, IF)',
         },
         {
-          title: '1 year of updates',
+          title: 'Timbre de Société et Cartes de Visite',
         },
-        null,
         {
-          title: 'Private beta access',
-          iconColor: 'green.500',
+          title: 'Consultation Gratuite (1h)',
         },
       ],
       action: {
-        href: 'https://appulse.gumroad.com/l/saas-ui-pro-pre-order?variant=Single%20license',
+        href: '#',
       },
     },
     {
-      id: 'startup',
-      title: 'Startup',
-      description: 'Unlimited license for growing teams.',
-      price: (
-        <HStack>
-          <Text textDecoration="line-through" fontSize="sm" color="gray.400">
-            €999,-
-          </Text>
-          <Text>€499,-</Text>
-        </HStack>
-      ),
+      id: 'full-service',
+      title: 'Suite de Croissance Entreprise',
+      description: 'Solution Complète de Gestion d’Entreprise',
+      price: 'À partir de 5000 MAD/an',
       features: [
         {
-          title: 'Unlimited projects',
+          title: 'Avantages du Pack Lancement d’Entreprise',
         },
         {
-          title: 'Unlimited developers',
+          title: 'Gestion Comptable Complète',
         },
         {
-          title: '1 year of updates',
+          title: 'Rapports Financiers Mensuels',
         },
         {
-          title: 'Everything from Bootstrap',
+          title: 'Planification Fiscale et Déclarations',
         },
-        null,
         {
-          title: 'Private beta access',
-          iconColor: 'green.500',
+          title: 'Gestion de la Paie',
+        },
+        {
+          title: 'Suivi de la Conformité Légale',
+        },
+        {
+          title: 'Revue Trimestrielle de l’Entreprise',
+        },
+        {
+          title: 'Support Prioritaire et Gestionnaire Dédié',
         },
       ],
       action: {
-        href: 'https://appulse.gumroad.com/l/saas-ui-pro-pre-order?variant=Unlimited%20license',
+        href: '#',
       },
     },
   ],
-}
+};

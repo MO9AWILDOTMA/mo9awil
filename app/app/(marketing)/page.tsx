@@ -94,71 +94,68 @@ const HeroSection: React.FC = () => {
             px="0"
             title={
               <FallInPlace>
-                Build beautiful
-                <Br /> software faster
+                Votre Succès
+                <Br /> au Maroc
               </FallInPlace>
             }
             description={
               <FallInPlace delay={0.4} fontWeight="medium">
-                Saas UI is a <Em>React component library</Em>
-                <Br /> that doesn&apos;t get in your way and helps you <Br />{' '}
-                build intuitive SaaS products with speed.
+                Services professionnels complets pour <Em>votre entreprise</Em>
+                <Br /> Domiciliation, création d'entreprise et comptabilité{' '}
+                <Br /> adaptés à vos besoins.
               </FallInPlace>
             }
           >
             <FallInPlace delay={0.8}>
-              <HStack pt="4" pb="12" spacing="8">
-                <NextjsLogo height="28px" /> <ChakraLogo height="20px" />
-              </HStack>
-
               <ButtonGroup spacing={4} alignItems="center">
-                <ButtonLink colorScheme="primary" size="lg" href="/signup">
-                  Sign Up
+                <ButtonLink colorScheme="primary" size="lg" href="/contact">
+                  Nous Contacter
                 </ButtonLink>
                 <ButtonLink
                   size="lg"
-                  href="https://demo.saas-ui.dev"
+                  href="#features"
                   variant="outline"
-                  rightIcon={
-                    <Icon
-                      as={FiArrowRight}
-                      sx={{
-                        transitionProperty: 'common',
-                        transitionDuration: 'normal',
-                        '.chakra-button:hover &': {
-                          transform: 'translate(5px)',
-                        },
-                      }}
-                    />
-                  }
+                  rightIcon={<Icon as={FiArrowRight} />}
                 >
-                  View demo
+                  Nos Services
                 </ButtonLink>
               </ButtonGroup>
             </FallInPlace>
           </Hero>
-          <Box
-            height="600px"
-            position="absolute"
-            display={{ base: 'none', lg: 'block' }}
-            left={{ lg: '60%', xl: '55%' }}
-            width="80vw"
-            maxW="1100px"
-            margin="0 auto"
-          >
-            <FallInPlace delay={1}>
-              <Box overflow="hidden" height="100%">
+              <Box
+                overflow="hidden"
+                height="100%"
+                position="relative"
+                bg="white"
+                _dark={{
+                  bg: 'gray.800',
+                }}
+                borderRadius="xl"
+                boxShadow="xl"
+                // gap={4}
+              >
+                <Box
+                  position="absolute"
+                  inset="0"
+                  bgGradient="linear(to-b, transparent, blackAlpha.50)"
+                  zIndex="1"
+                  _dark={{
+                    bgGradient: 'linear(to-b, transparent, whiteAlpha.100)',
+                  }}
+                />
                 <Image
-                  src="/static/screenshots/list.png"
-                  width={1200}
-                  height={762}
-                  alt="Screenshot of a ListPage in Saas UI Pro"
-                  quality="75"
+                  src="/static/images/business-vector.png"
+                  width={650}
+                  height={500}
+                  alt="Modern office space representing our business services"
+                  quality={100}
                   priority
+                  style={{
+                    objectFit: 'cover',
+                    objectPosition: 'center',
+                  }}
                 />
               </Box>
-            </FallInPlace>
-          </Box>
         </Stack>
       </Container>
 
@@ -170,33 +167,35 @@ const HeroSection: React.FC = () => {
         pt="20"
         features={[
           {
-            title: 'Accessible',
+            title: 'Expertise Locale',
             icon: FiSmile,
-            description: 'All components strictly follow WAI-ARIA standards.',
+            description:
+              'Une équipe qui comprend parfaitement le marché marocain.',
             iconPosition: 'left',
             delay: 0.6,
           },
           {
-            title: 'Themable',
+            title: 'Service Complet',
             icon: FiSliders,
             description:
-              'Fully customize all components to your brand with theme support and style props.',
+              'De la domiciliation à la comptabilité, tous vos besoins couverts.',
             iconPosition: 'left',
             delay: 0.8,
           },
           {
-            title: 'Composable',
+            title: 'Accompagnement',
             icon: FiGrid,
             description:
-              'Compose components to fit your needs and mix them together to create new ones.',
+              'Support personnalisé tout au long de votre parcours entrepreneurial.',
             iconPosition: 'left',
             delay: 1,
           },
           {
-            title: 'Productive',
+            title: 'Conformité',
             icon: FiThumbsUp,
             description:
-              'Designed to reduce boilerplate and fully typed, build your product at speed.',
+              'Respect total des réglementations marocaines en vigueur.',
+
             iconPosition: 'left',
             delay: 1.1,
           },
@@ -211,105 +210,109 @@ const HighlightsSection = () => {
   const { value, onCopy, hasCopied } = useClipboard('yarn add @saas-ui/react')
 
   return (
-    <Highlights>
-      <HighlightsItem colSpan={[1, null, 2]} title="Core components">
-        <VStack alignItems="flex-start" spacing="8">
-          <Text color="muted" fontSize="xl">
-            Get started for free with <Em>30+ open source components</Em>.
-            Including authentication screens with Clerk, Supabase and Magic.
-            Fully functional forms with React Hook Form. Data tables with React
-            Table.
-          </Text>
+<Highlights id='about'>
+  <HighlightsItem colSpan={[1, null, 2]} title="Pourquoi Choisir Mo9awil.ma ?">
+    <VStack alignItems="flex-start" spacing="8">
+      <Text color="muted" fontSize="xl">
+        Faites confiance à <Em>les conseillers juridiques les plus fiables du Maroc</Em> pour répondre à vos besoins professionnels. Notre équipe expérimentée offre des conseils d'experts et un accompagnement personnalisé tout au long de votre parcours entrepreneurial.
+      </Text>
 
-          <Flex
-            rounded="full"
-            borderWidth="1px"
-            flexDirection="row"
-            alignItems="center"
-            py="1"
-            ps="8"
-            pe="2"
-            bg="primary.900"
-            _dark={{ bg: 'gray.900' }}
-          >
-            <Box>
-              <Text color="yellow.400" display="inline">
-                yarn add
-              </Text>{' '}
-              <Text color="cyan.300" display="inline">
-                @saas-ui/react
-              </Text>
-            </Box>
-            <IconButton
-              icon={hasCopied ? <FiCheck /> : <FiCopy />}
-              aria-label="Copy install command"
-              onClick={onCopy}
-              variant="ghost"
-              ms="4"
-              isRound
-              color="white"
-            />
-          </Flex>
-        </VStack>
-      </HighlightsItem>
-      <HighlightsItem title="Solid foundations">
-        <Text color="muted" fontSize="lg">
-          We don&apos;t like to re-invent the wheel, neither should you. We
-          selected the most productive and established tools in the scene and
-          build Saas UI on top of it.
-        </Text>
-      </HighlightsItem>
-      <HighlightsTestimonialItem
-        name="Renata Alink"
-        description="Founder"
-        avatar="/static/images/avatar.jpg"
-        gradient={['pink.200', 'purple.500']}
+      <Flex
+        rounded="full"
+        borderWidth="1px"
+        flexDirection="row"
+        alignItems="center"
+        py="4"
+        px="8"
+        bg="primary.900"
+        _dark={{ bg: 'gray.900' }}
       >
-        “Saas UI helped us set up a beautiful modern UI in no time. It saved us
-        hundreds of hours in development time and allowed us to focus on
-        business logic for our specific use-case from the start.”
-      </HighlightsTestimonialItem>
-      <HighlightsItem
-        colSpan={[1, null, 2]}
-        title="Start your next idea two steps ahead"
-      >
-        <Text color="muted" fontSize="lg">
-          We took care of all your basic frontend needs, so you can start
-          building functionality that makes your product unique.
+        <Text color="white" fontSize="lg" fontWeight="medium">
+          Recommandé par des centaines d’entreprises à travers le Maroc
         </Text>
-        <Wrap mt="8">
-          {[
-            'authentication',
-            'navigation',
-            'crud',
-            'settings',
-            'multi-tenancy',
-            'layouts',
-            'billing',
-            'a11y testing',
-            'server-side rendering',
-            'documentation',
-            'onboarding',
-            'storybooks',
-            'theming',
-            'upselling',
-            'unit testing',
-            'feature flags',
-            'responsiveness',
-          ].map((value) => (
-            <Tag
-              key={value}
-              variant="subtle"
-              colorScheme="purple"
-              rounded="full"
-              px="3"
-            >
-              {value}
-            </Tag>
-          ))}
-        </Wrap>
-      </HighlightsItem>
-    </Highlights>
+      </Flex>
+    </VStack>
+  </HighlightsItem>
+  <HighlightsItem title="Accompagnement Professionnel">
+    <Text color="muted" fontSize="lg">
+      Nos experts juridiques offrent des conseils complets et un soutien pour assurer le succès de votre entreprise sur le marché marocain.
+    </Text>
+  </HighlightsItem>
+  <HighlightsTestimonialItem
+    name="Sara Benjelloun"
+    description="Entrepreneure"
+    avatar="/static/images/avatar.jpg"
+    gradient={['blue.200', 'green.500']}
+    sx={{
+      '.chakra-card': {
+        bg: 'white',
+        _dark: {
+          bg: 'gray.800',
+          borderColor: 'whiteAlpha.100',
+        },
+        boxShadow: 'xl',
+        borderRadius: 'xl',
+        borderWidth: '1px',
+        borderColor: 'gray.100',
+      },
+      '.chakra-card__body': {
+        color: 'gray.700',
+        _dark: {
+          color: 'whiteAlpha.900',
+        },
+      },
+      '.chakra-heading': {
+        color: 'gray.900',
+        _dark: {
+          color: 'white',
+        },
+      },
+      '.chakra-text span': {
+        color: 'gray.600',
+        _dark: {
+          color: 'whiteAlpha.700',
+        },
+      },
+    }}
+  >
+    "L'expertise juridique et l'attention personnalisée de Mo9awil.ma ont été inestimables pour la création de mon entreprise. Leur soutien continu a été crucial pour rester en conformité et gérer les questions administratives."
+  </HighlightsTestimonialItem>
+  <HighlightsItem colSpan={[1, null, 2]} title="Support Juridique Complet">
+    <Text color="muted" fontSize="lg">
+      De la consultation initiale au soutien continu, nous offrons l'expertise et les conseils juridiques dont vous avez besoin pour établir et maintenir votre entreprise au Maroc.
+    </Text>
+    <Wrap mt="8">
+      {[
+        'consultation juridique',
+        'enregistrement d’entreprise',
+        'domiciliation d’entreprise',
+        'gestion des documents',
+        'gestion de la conformité',
+        'support administratif',
+        'représentation juridique',
+        'permis d’entreprise',
+        'conformité réglementaire',
+        'immatriculation fiscale',
+        'correspondance officielle',
+        'licences d’entreprise',
+        'documentation légale',
+        'services aux entreprises',
+        'conseils professionnels',
+      ].map((value) => (
+        <Tag
+          key={value}
+          variant="subtle"
+          colorScheme="blue"
+          rounded="full"
+          px="3"
+        >
+          {value}
+        </Tag>
+      ))}
+    </Wrap>
+  </HighlightsItem>
+</Highlights>
+
   )
 }
 
@@ -324,88 +327,61 @@ const FeaturesSection = () => {
           textAlign="left"
           as="p"
         >
-          Not your standard
-          <Br /> dashboard template.
+        Services Professionnels
+          <Br /> pour Votre Entreprise
         </Heading>
       }
       description={
         <>
-          Saas UI Pro includes everything you need to build modern frontends.
+          Des solutions complètes pour votre réussite au Maroc.
           <Br />
-          Use it as a template for your next product or foundation for your
-          design system.
+          Une expertise locale pour un accompagnement sur mesure.
         </>
       }
       align="left"
       columns={[1, 2, 3]}
       iconSize={4}
-      features={[
+ features={[
         {
-          title: '#components.',
+          title: 'Domiciliation',
           icon: FiBox,
           description:
-            'All premium components are available on a private NPM registery, no more copy pasting and always up-to-date.',
+            'Adresse professionnelle prestigieuse à Casablanca, Rabat ou Tanger.',
           variant: 'inline',
         },
         {
-          title: 'Starterkits.',
+          title: "Création d'Entreprise",
           icon: FiLock,
           description:
-            'Example apps in Next.JS, Electron. Including authentication, billing, example pages, everything you need to get started FAST.',
+            'Accompagnement complet dans la création de votre société au Maroc.',
           variant: 'inline',
         },
         {
-          title: 'Documentation.',
+          title: 'Comptabilité',
           icon: FiSearch,
           description:
-            'Extensively documented, including storybooks, best practices, use-cases and examples.',
+            'Gestion comptable professionnelle et conformité fiscale.',
           variant: 'inline',
         },
         {
-          title: 'Onboarding.',
+          title: 'Conseil Juridique',
           icon: FiUserPlus,
           description:
-            'Add user onboarding flows, like tours, hints and inline documentation without breaking a sweat.',
+            'Expertise en droit des affaires marocain et accompagnement légal.',
           variant: 'inline',
         },
         {
-          title: 'Feature flags.',
+          title: 'Support Administratif',
           icon: FiFlag,
           description:
-            "Implement feature toggles for your billing plans with easy to use hooks. Connect Flagsmith, or other remote config services once you're ready.",
+            'Gestion du courrier, secrétariat et services administratifs.',
           variant: 'inline',
         },
         {
-          title: 'Upselling.',
+          title: 'Développement',
           icon: FiTrendingUp,
           description:
-            '#components and hooks for upgrade flows designed to make upgrading inside your app frictionless.',
-          variant: 'inline',
-        },
-        {
-          title: 'Themes.',
-          icon: FiToggleLeft,
-          description:
-            'Includes multiple themes with darkmode support, always have the perfect starting point for your next project.',
-          variant: 'inline',
-        },
-        {
-          title: 'Generators.',
-          icon: FiTerminal,
-          description:
-            'Extend your design system while maintaininig code quality and consistency with built-in generators.',
-          variant: 'inline',
-        },
-        {
-          title: 'Monorepo.',
-          icon: FiCode,
-          description: (
-            <>
-              All code is available as packages in a high-performance{' '}
-              <Link href="https://turborepo.com">Turborepo</Link>, you have full
-              control to modify and adjust it to your workflow.
-            </>
-          ),
+            'Stratégies de croissance et développement commercial au Maroc.',
           variant: 'inline',
         },
       ]}

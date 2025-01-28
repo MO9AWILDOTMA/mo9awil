@@ -10,6 +10,7 @@ import {
 } from '../announcement-banner'
 import { Footer, FooterProps } from './footer'
 import { Header, HeaderProps } from './header'
+import WhatsAppIcon from '#components/whatsapp-icon'
 
 interface LayoutProps {
   children: ReactNode
@@ -30,6 +31,7 @@ export const MarketingLayout: React.FC<LayoutProps> = (props) => {
         {children}
       </Box>
       <Footer {...footerProps} />
+            <WhatsAppIcon />
     </Box>
   )
 }

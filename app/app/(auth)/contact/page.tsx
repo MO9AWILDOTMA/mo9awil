@@ -1,9 +1,19 @@
-import { Box, Center, Stack, Text } from '@chakra-ui/react'
-import { Auth } from '@saas-ui/auth'
-import { Link } from '@saas-ui/react'
+'use client'
+
+import {
+  Box,
+  Button,
+  Center,
+  FormControl,
+  FormLabel,
+  Input,
+  Select,
+  Stack,
+  Text,
+  VStack,
+} from '@chakra-ui/react'
 import { NextPage } from 'next'
 import NextLink from 'next/link'
-import { FaGithub, FaGoogle } from 'react-icons/fa'
 
 import { Features } from '#components/features'
 import { BackgroundGradient } from '#components/gradients/background-gradient'
@@ -11,19 +21,12 @@ import { PageTransition } from '#components/motion/page-transition'
 import { Section } from '#components/section'
 import siteConfig from '#data/config'
 
-const providers = {
-  google: {
-    name: 'Google',
-    icon: FaGoogle,
-  },
-  github: {
-    name: 'Github',
-    icon: FaGithub,
-    variant: 'solid',
-  },
-}
+const ContactForm: NextPage = () => {
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    // Handle form submission here
+  }
 
-const Login: NextPage = () => {
   return (
     <Section height="100vh" innerWidth="container.xl">
       <BackgroundGradient
@@ -64,30 +67,51 @@ const Login: NextPage = () => {
               features={siteConfig.signup.features.map((feature) => ({
                 iconPosition: 'left',
                 variant: 'left-icon',
-
                 ...feature,
               }))}
             />
           </Box>
           <Center height="100%" flex="1">
             <Box width="container.sm" pt="8" px="8">
-              <Auth
-                view="signup"
-                title={siteConfig.signup.title}
-                providers={providers}
-                loginLink={<Link href="/login">Log in</Link>}
-              >
-                <Text color="muted" fontSize="sm">
-                  By signing up you agree to our{' '}
-                  <Link href={siteConfig.termsUrl} color="white">
-                    Terms of Service
-                  </Link>{' '}
-                  and{' '}
-                  <Link href={siteConfig.privacyUrl} color="white">
-                    Privacy Policy
-                  </Link>
-                </Text>
-              </Auth>
+<VStack
+  as="form"
+  onSubmit={handleSubmit}
+  spacing={6}
+  align="stretch"
+>
+  <Text fontSize="2xl" fontWeight="bold" mb={4}>
+    Contactez-Nous
+  </Text>
+  <FormControl isRequired>
+    <FormLabel>Nom Complet</FormLabel>
+    <Input type="text" placeholder="Entrez votre nom complet" />
+  </FormControl>
+  <FormControl isRequired>
+    <FormLabel>Email</FormLabel>
+    <Input type="email" placeholder="Entrez votre email" />
+  </FormControl>
+  <FormControl isRequired>
+    <FormLabel>Numéro de Téléphone</FormLabel>
+    <Input type="tel" placeholder="Entrez votre numéro de téléphone" />
+  </FormControl>
+  <FormControl isRequired>
+    <FormLabel>Choisir un Pack</FormLabel>
+    <Select placeholder="Sélectionnez un pack">
+      <option value="basic">Pack Basique</option>
+      <option value="standard">Pack Standard</option>
+      <option value="premium">Pack Premium</option>
+    </Select>
+  </FormControl>
+  <Button
+    type="submit"
+    colorScheme="primary"
+    size="lg"
+    width="100%"
+  >
+    Soumettre
+  </Button>
+</VStack>
+
             </Box>
           </Center>
         </Stack>
@@ -96,4 +120,4 @@ const Login: NextPage = () => {
   )
 }
 
-export default Login
+export default ContactForm
