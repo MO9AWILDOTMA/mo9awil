@@ -22,6 +22,7 @@
       "#data/*": ["./data/*"],
       "#theme": ["./theme"]
     },
+    "types": ["node", "next", "next-seo"],
     "plugins": [
       {
         "name": "next"

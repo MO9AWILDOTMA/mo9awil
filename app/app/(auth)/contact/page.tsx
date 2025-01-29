@@ -89,7 +89,7 @@ const ContactForm: NextPage = () => {
 
     // Clear the response state
     setResponse(null)
-  }, [response, onClose, toast, router, reset])
+  }, [response, onClose, toast, router])
 
   const onSubmit: SubmitHandler<MyFormData> = async (data) => {
     setLoading(true)
