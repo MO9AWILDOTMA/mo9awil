@@ -3,15 +3,17 @@ import nodemailer from 'nodemailer';
 import Mail from 'nodemailer/lib/mailer';
 
 export async function POST(request: NextRequest) {
-  const { email, name, message, pack } = await request.json();
-
+  const { email, name, message, pack, phone } = await request.json();
   const transport = nodemailer.createTransport({
     service: 'gmail',
     auth: {
       user: process.env.NEXT_PUBLIC_MY_EMAIL,
       pass: process.env.NEXT_PUBLIC_MY_PASSWORD,
     },
+    logger: true,  // Enable logging for debugging
+    debug: true,   // More detailed debug output
   });
+  
 
   // HTML template for client email
   const clientHtmlContent = `
@@ -100,6 +102,7 @@ export async function POST(request: NextRequest) {
       <div style="background-color: #f5f5f5; padding: 20px; border-radius: 5px; margin: 20px 0;">
         <p><strong>Nom du client:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Email:</strong> ${phone}</p>
         <p><strong>Pack sélectionné:</strong> ${pack}</p>
         <p><strong>Message du client:</strong></p>
         <div style="background-color: white; padding: 15px; border-left: 4px solid #8952E0; margin: 10px 0;">

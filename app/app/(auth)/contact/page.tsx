@@ -91,67 +91,87 @@ const ContactForm: NextPage = () => {
     setResponse(null)
   }, [response, onClose, toast, router, reset])
 
-  // const onSubmit: SubmitHandler<MyFormData> = async (data) => {
-  //   setLoading(true)
-  //   setResponse(null)
-
-  //   try {
-  //     // Run both saveToSheet and sendEmail concurrently
-  //     const [sheetResponse, emailResponse] = await Promise.all([
-  //       saveToSheet(data),
-  //       sendEmail(data),
-  //     ])
-
-  //     // Check if both operations were successful
-  //     if (
-  //       sheetResponse.status === 'success' &&
-  //       emailResponse.status === 'success'
-  //     ) {
-  //       setResponse({
-  //         message: 'Both operations completed successfully!',
-  //         status: 'success',
-  //       })
-  //       reset() // Reset the form if both operations succeed
-  //     } else {
-  //       // Handle partial failure
-  //       setResponse({
-  //         message: 'One or more operations failed.',
-  //         status: 'failed',
-  //       })
-  //     }
-
-  //     onOpen() // Open the modal to show the response
-  //   } catch (err) {
-  //     // Handle unexpected errors
-  //     setResponse({
-  //       message: 'Une erreur inattendue est survenue.',
-  //       status: 'failed',
-  //     })
-  //     onOpen()
-  //   } finally {
-  //     setLoading(false) // Ensure loading is always turned off
-  //   }
-  // }
-
-  const onSubmit: SubmitHandler<MyFormData> = async (data: MyFormData) => {
+  const onSubmit: SubmitHandler<MyFormData> = async (data) => {
     setLoading(true)
     setResponse(null)
 
     try {
-      const res = await sendEmail(data)
-      setResponse(res)
-      onOpen()
-      if (res.status === 'success') {
-        reset()
+      // Exécuter à la fois saveToSheet et sendEmail en parallèle
+      const [sheetResponse, emailResponse] = await Promise.all([
+        saveToSheet(data),
+        sendEmail(data),
+      ])
+
+      // Vérifier si les deux opérations ont réussi
+      console.log(sheetResponse.status)
+
+      if (
+        sheetResponse.status === 'success' ||
+        emailResponse.status === 'success'
+      ) {
+        console.log('1')
+        setResponse({
+          message: 'Les deux opérations ont été effectuées avec succès !',
+          status: 'success',
+        })
+        reset() // Réinitialiser le formulaire si les deux opérations réussissent
+      } else if (
+        sheetResponse.status === 'success' ||
+        sheetResponse.status === '0'
+      ) {
+        setResponse({
+          message:
+            "Les données ont été enregistrées, mais l'envoi de l'email a échoué. " +
+            (emailResponse.message || ''),
+          status: 'partial',
+        })
+      } else if (emailResponse.status === ('success' as string)) {
+        setResponse({
+          message:
+            "Email envoyé avec succès, mais l'enregistrement des données a échoué. " +
+            (sheetResponse.message || ''),
+          status: 'partial',
+        })
+      } else {
+        setResponse({
+          message:
+            'Les deux opérations ont échoué. ' +
+            (sheetResponse.message || '') +
+            (emailResponse.message || ''),
+          status: 'failed',
+        })
       }
+
+      onOpen() // Ouvrir le modal pour afficher la réponse
     } catch (err) {
-      setResponse({
-        message: 'Une erreur inattendue est survenue.',
-        status: 'failed',
-      })
+      // Gérer les erreurs inattendues
+      console.error("Erreur lors de l'envoi ou de l'enregistrement:", err)
+
+      // Vérifier si l'erreur provient d'une des deux fonctions (saveToSheet ou sendEmail)
+      if (err instanceof Error) {
+        // Handle network-related errors like "Failed to fetch"
+        if (err.message.includes('Failed to fetch')) {
+          setResponse({
+            message:
+              'Une erreur de réseau est survenue. Veuillez vérifier votre connexion internet.',
+            status: 'failed',
+          })
+        } else {
+          setResponse({
+            message: `Une erreur inattendue est survenue: ${err.message}`,
+            status: 'failed',
+          })
+        }
+      } else {
+        setResponse({
+          message: 'Une erreur inconnue est survenue.',
+          status: 'failed',
+        })
+      }
+
       onOpen()
     } finally {
-      setLoading(false)
+      setLoading(false) // Assurer que le chargement est toujours désactivé
     }
   }
 
@@ -308,10 +328,10 @@ const ContactForm: NextPage = () => {
                     <option value="premium">Pack Premium</option>
                   </Select>
                 </FormControl>
-                <FormControl isRequired>
+                <FormControl>
                   <FormLabel>Message</FormLabel>
                   <Input
-                    {...register('message', { required: true })}
+                    {...register('message', { required: false })}
                     type="text"
                     placeholder="Laissez-nous un message, nous sommes là pour vous répondre rapidement !"
                   />

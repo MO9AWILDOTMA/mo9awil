@@ -2,7 +2,7 @@ import { MyFormData } from './../app/(auth)/contact/page';
 
 export interface IResponse {
     message:string;
-    status: "pending" | "success" | "failed";
+    status: "pending" | "success" | "partial" | "failed";
 }
 export async function sendEmail(data: MyFormData): Promise<IResponse> {
     let resObj: IResponse = {
