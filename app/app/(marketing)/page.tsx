@@ -17,7 +17,7 @@ import {
   useClipboard,
 } from '@chakra-ui/react'
 import { Br, Link } from '@saas-ui/react'
-import type { Metadata, NextPage } from 'next'
+import type { NextPage } from 'next'
 import Image from 'next/image'
 import {
   FiArrowRight,
@@ -58,11 +58,6 @@ import { Em } from '#components/typography'
 import faq from '#data/faq'
 import pricing from '#data/pricing'
 import testimonials from '#data/testimonials'
-
-export const meta: Metadata = {
-  title: 'Saas UI Landingspage',
-  description: 'Free SaaS landingspage starter kit',
-}
 
 const Home: NextPage = () => {
   return (
@@ -242,7 +237,7 @@ const HighlightsSection = () => {
             _dark={{ bg: 'gray.900' }}
           >
             <Text color="white" fontSize="lg" fontWeight="medium">
-              Recommandé par des centaines d’entreprises à travers le Maroc
+              Recommandé par des centaines d'entreprises à travers le Maroc
             </Text>
           </Flex>
         </VStack>
@@ -304,17 +299,17 @@ const HighlightsSection = () => {
         <Wrap mt="8">
           {[
             'consultation juridique',
-            'enregistrement d’entreprise',
-            'domiciliation d’entreprise',
+            "enregistrement d'entreprise",
+            "domiciliation d'entreprise",
             'gestion des documents',
             'gestion de la conformité',
             'support administratif',
             'représentation juridique',
-            'permis d’entreprise',
+            "permis d'entreprise",
             'conformité réglementaire',
             'immatriculation fiscale',
             'correspondance officielle',
-            'licences d’entreprise',
+            "licences d'entreprise",
             'documentation légale',
             'services aux entreprises',
             'conseils professionnels',
