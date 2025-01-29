@@ -34,6 +34,10 @@ const siteConfig = {
         label: 'À propos',
       },
       {
+        id: 'faq',
+        label: 'FAQ',
+      },
+      {
         label: 'Commencer',
         href: '/contact',
         variant: 'primary',
