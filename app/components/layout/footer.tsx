@@ -20,7 +20,7 @@ export const Footer: React.FC<FooterProps> = (props) => {
   const { columns = 2, ...rest } = props
   return (
     <Box bg="white" _dark={{ bg: 'gray.900' }} {...rest}>
-      <Container maxW="container.2xl" px="8" py="8">
+      <Container maxW="container.2xl" px="8" pt="8" pb={'3'}>
         <SimpleGrid columns={columns}>
           <Stack spacing="8">
             <Stack alignItems="flex-start">
