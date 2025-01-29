@@ -242,7 +242,7 @@ const HighlightsSection = () => {
             _dark={{ bg: 'gray.900' }}
           >
             <Text color="white" fontSize="lg" fontWeight="medium">
-              Recommandé par des centaines d’entreprises à travers le Maroc
+              Recommandé par des centaines d'entreprises à travers le Maroc
             </Text>
           </Flex>
         </VStack>
@@ -304,17 +304,17 @@ const HighlightsSection = () => {
         <Wrap mt="8">
           {[
             'consultation juridique',
-            'enregistrement d’entreprise',
-            'domiciliation d’entreprise',
+            "enregistrement d'entreprise",
+            "domiciliation d'entreprise",
             'gestion des documents',
             'gestion de la conformité',
             'support administratif',
             'représentation juridique',
-            'permis d’entreprise',
+            "permis d'entreprise",
             'conformité réglementaire',
             'immatriculation fiscale',
             'correspondance officielle',
-            'licences d’entreprise',
+            "licences d'entreprise",
             'documentation légale',
             'services aux entreprises',
             'conseils professionnels',
