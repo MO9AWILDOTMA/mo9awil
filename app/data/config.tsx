@@ -23,11 +23,15 @@ const siteConfig = {
       },
       {
         id: 'pricing',
-        label: 'Tarifs',
+        label: 'Tarif',
+      },
+      {
+        id: 'benefits',
+        label: 'Avantages',
       },
       {
         id: 'about',
-        label: 'À propos de nous',
+        label: 'À propos',
       },
       {
         label: 'Commencer',
@@ -76,7 +80,6 @@ const siteConfig = {
       },
     ],
   },
-};
-
+}
 
 export default siteConfig

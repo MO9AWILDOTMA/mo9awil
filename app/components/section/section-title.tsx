@@ -1,8 +1,8 @@
 import {
-  VStack,
-  Heading,
   Box,
+  Heading,
   StackProps,
+  VStack,
   useMultiStyleConfig,
 } from '@chakra-ui/react'
 
@@ -24,7 +24,7 @@ export const SectionTitle: React.FC<SectionTitleProps> = (props) => {
       spacing={4}
       {...rest}
     >
-      <Heading sx={styles.title} as="h2">
+      <Heading sx={styles.title} textAlign={'center'} as="h2">
         {title}
       </Heading>
       {description && (

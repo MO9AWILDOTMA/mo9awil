@@ -86,12 +86,20 @@ const HeroSection: React.FC = () => {
   return (
     <Box position="relative" overflow="hidden">
       <BackgroundGradient height="100%" zIndex="-1" />
-      <Container maxW="container.xl" pt={{ base: 40, lg: 60 }} pb="40">
-        <Stack direction={{ base: 'column', lg: 'row' }} alignItems="center">
+      <Container
+        maxW="container.xl"
+        pt={{ base: 30, lg: 40 }}
+        pb="40"
+        id="home"
+      >
+        <Stack
+          direction={{ base: 'column', lg: 'row' }}
+          justifyContent={'space-between'}
+          alignItems="center"
+        >
           <Hero
-            id="home"
             justifyContent="flex-start"
-            px="0"
+            px="3"
             title={
               <FallInPlace>
                 Votre Succès
@@ -122,49 +130,48 @@ const HeroSection: React.FC = () => {
               </ButtonGroup>
             </FallInPlace>
           </Hero>
-              <Box
-                overflow="hidden"
-                height="100%"
-                position="relative"
-                bg="white"
-                _dark={{
-                  bg: 'gray.800',
-                }}
-                borderRadius="xl"
-                boxShadow="xl"
-                // gap={4}
-              >
-                <Box
-                  position="absolute"
-                  inset="0"
-                  bgGradient="linear(to-b, transparent, blackAlpha.50)"
-                  zIndex="1"
-                  _dark={{
-                    bgGradient: 'linear(to-b, transparent, whiteAlpha.100)',
-                  }}
-                />
-                <Image
-                  src="/static/images/business-vector.png"
-                  width={650}
-                  height={500}
-                  alt="Modern office space representing our business services"
-                  quality={100}
-                  priority
-                  style={{
-                    objectFit: 'cover',
-                    objectPosition: 'center',
-                  }}
-                />
-              </Box>
+          <Box
+            overflow="hidden"
+            height="100%"
+            position="relative"
+            bg="white"
+            _dark={{
+              bg: 'gray.800',
+            }}
+            borderRadius="xl"
+            boxShadow="xl"
+            // gap={4}
+          >
+            <Box
+              position="absolute"
+              inset="0"
+              bgGradient="linear(to-b, transparent, blackAlpha.50)"
+              zIndex="1"
+              _dark={{
+                bgGradient: 'linear(to-b, transparent, whiteAlpha.100)',
+              }}
+            />
+            <Image
+              src="/static/images/business-vector.png"
+              width={650}
+              height={500}
+              alt="Modern office space representing our business services"
+              quality={100}
+              priority
+              style={{
+                objectFit: 'cover',
+                objectPosition: 'center',
+              }}
+            />
+          </Box>
         </Stack>
       </Container>
-
       <Features
         id="benefits"
         columns={[1, 2, 4]}
-        iconSize={4}
+        iconSize={50}
         innerWidth="container.xl"
-        pt="20"
+        pt="200"
         features={[
           {
             title: 'Expertise Locale',
@@ -210,109 +217,121 @@ const HighlightsSection = () => {
   const { value, onCopy, hasCopied } = useClipboard('yarn add @saas-ui/react')
 
   return (
-<Highlights id='about'>
-  <HighlightsItem colSpan={[1, null, 2]} title="Pourquoi Choisir Mo9awil.ma ?">
-    <VStack alignItems="flex-start" spacing="8">
-      <Text color="muted" fontSize="xl">
-        Faites confiance à <Em>les conseillers juridiques les plus fiables du Maroc</Em> pour répondre à vos besoins professionnels. Notre équipe expérimentée offre des conseils d'experts et un accompagnement personnalisé tout au long de votre parcours entrepreneurial.
-      </Text>
-
-      <Flex
-        rounded="full"
-        borderWidth="1px"
-        flexDirection="row"
-        alignItems="center"
-        py="4"
-        px="8"
-        bg="primary.900"
-        _dark={{ bg: 'gray.900' }}
+    <Highlights id="about">
+      <HighlightsItem
+        colSpan={[1, null, 2]}
+        title="Pourquoi Choisir Mo9awil.ma ?"
       >
-        <Text color="white" fontSize="lg" fontWeight="medium">
-          Recommandé par des centaines d’entreprises à travers le Maroc
-        </Text>
-      </Flex>
-    </VStack>
-  </HighlightsItem>
-  <HighlightsItem title="Accompagnement Professionnel">
-    <Text color="muted" fontSize="lg">
-      Nos experts juridiques offrent des conseils complets et un soutien pour assurer le succès de votre entreprise sur le marché marocain.
-    </Text>
-  </HighlightsItem>
-  <HighlightsTestimonialItem
-    name="Sara Benjelloun"
-    description="Entrepreneure"
-    avatar="/static/images/avatar.jpg"
-    gradient={['blue.200', 'green.500']}
-    sx={{
-      '.chakra-card': {
-        bg: 'white',
-        _dark: {
-          bg: 'gray.800',
-          borderColor: 'whiteAlpha.100',
-        },
-        boxShadow: 'xl',
-        borderRadius: 'xl',
-        borderWidth: '1px',
-        borderColor: 'gray.100',
-      },
-      '.chakra-card__body': {
-        color: 'gray.700',
-        _dark: {
-          color: 'whiteAlpha.900',
-        },
-      },
-      '.chakra-heading': {
-        color: 'gray.900',
-        _dark: {
-          color: 'white',
-        },
-      },
-      '.chakra-text span': {
-        color: 'gray.600',
-        _dark: {
-          color: 'whiteAlpha.700',
-        },
-      },
-    }}
-  >
-    "L'expertise juridique et l'attention personnalisée de Mo9awil.ma ont été inestimables pour la création de mon entreprise. Leur soutien continu a été crucial pour rester en conformité et gérer les questions administratives."
-  </HighlightsTestimonialItem>
-  <HighlightsItem colSpan={[1, null, 2]} title="Support Juridique Complet">
-    <Text color="muted" fontSize="lg">
-      De la consultation initiale au soutien continu, nous offrons l'expertise et les conseils juridiques dont vous avez besoin pour établir et maintenir votre entreprise au Maroc.
-    </Text>
-    <Wrap mt="8">
-      {[
-        'consultation juridique',
-        'enregistrement d’entreprise',
-        'domiciliation d’entreprise',
-        'gestion des documents',
-        'gestion de la conformité',
-        'support administratif',
-        'représentation juridique',
-        'permis d’entreprise',
-        'conformité réglementaire',
-        'immatriculation fiscale',
-        'correspondance officielle',
-        'licences d’entreprise',
-        'documentation légale',
-        'services aux entreprises',
-        'conseils professionnels',
-      ].map((value) => (
-        <Tag
-          key={value}
-          variant="subtle"
-          colorScheme="blue"
-          rounded="full"
-          px="3"
-        >
-          {value}
-        </Tag>
-      ))}
-    </Wrap>
-  </HighlightsItem>
-</Highlights>
+        <VStack alignItems="flex-start" spacing="8">
+          <Text color="muted" fontSize="xl">
+            Faites confiance à{' '}
+            <Em>les conseillers juridiques les plus fiables du Maroc</Em> pour
+            répondre à vos besoins professionnels. Notre équipe expérimentée
+            offre des conseils d'experts et un accompagnement personnalisé tout
+            au long de votre parcours entrepreneurial.
+          </Text>
 
+          <Flex
+            rounded="full"
+            borderWidth="1px"
+            flexDirection="row"
+            alignItems="center"
+            py="4"
+            px="8"
+            bg="primary.900"
+            _dark={{ bg: 'gray.900' }}
+          >
+            <Text color="white" fontSize="lg" fontWeight="medium">
+              Recommandé par des centaines d’entreprises à travers le Maroc
+            </Text>
+          </Flex>
+        </VStack>
+      </HighlightsItem>
+      <HighlightsItem title="Accompagnement Professionnel">
+        <Text color="muted" fontSize="lg">
+          Nos experts juridiques offrent des conseils complets et un soutien
+          pour assurer le succès de votre entreprise sur le marché marocain.
+        </Text>
+      </HighlightsItem>
+      <HighlightsTestimonialItem
+        name="Sara Benjelloun"
+        description="Entrepreneure"
+        avatar="/static/images/avatar.jpg"
+        gradient={['blue.200', 'green.500']}
+        sx={{
+          '.chakra-card': {
+            bg: 'white',
+            _dark: {
+              bg: 'gray.800',
+              borderColor: 'whiteAlpha.100',
+            },
+            boxShadow: 'xl',
+            borderRadius: 'xl',
+            borderWidth: '1px',
+            borderColor: 'gray.100',
+          },
+          '.chakra-card__body': {
+            color: 'gray.700',
+            _dark: {
+              color: 'whiteAlpha.900',
+            },
+          },
+          '.chakra-heading': {
+            color: 'gray.900',
+            _dark: {
+              color: 'white',
+            },
+          },
+          '.chakra-text span': {
+            color: 'gray.600',
+            _dark: {
+              color: 'whiteAlpha.700',
+            },
+          },
+        }}
+      >
+        "L'expertise juridique et l'attention personnalisée de Mo9awil.ma ont
+        été inestimables pour la création de mon entreprise. Leur soutien
+        continu a été crucial pour rester en conformité et gérer les questions
+        administratives."
+      </HighlightsTestimonialItem>
+      <HighlightsItem colSpan={[1, null, 2]} title="Support Juridique Complet">
+        <Text color="muted" fontSize="lg">
+          De la consultation initiale au soutien continu, nous offrons
+          l'expertise et les conseils juridiques dont vous avez besoin pour
+          établir et maintenir votre entreprise au Maroc.
+        </Text>
+        <Wrap mt="8">
+          {[
+            'consultation juridique',
+            'enregistrement d’entreprise',
+            'domiciliation d’entreprise',
+            'gestion des documents',
+            'gestion de la conformité',
+            'support administratif',
+            'représentation juridique',
+            'permis d’entreprise',
+            'conformité réglementaire',
+            'immatriculation fiscale',
+            'correspondance officielle',
+            'licences d’entreprise',
+            'documentation légale',
+            'services aux entreprises',
+            'conseils professionnels',
+          ].map((value) => (
+            <Tag
+              key={value}
+              variant="subtle"
+              colorScheme="blue"
+              rounded="full"
+              px="3"
+            >
+              {value}
+            </Tag>
+          ))}
+        </Wrap>
+      </HighlightsItem>
+    </Highlights>
   )
 }
 
@@ -327,7 +346,7 @@ const FeaturesSection = () => {
           textAlign="left"
           as="p"
         >
-        Services Professionnels
+          Services Professionnels
           <Br /> pour Votre Entreprise
         </Heading>
       }
@@ -341,7 +360,7 @@ const FeaturesSection = () => {
       align="left"
       columns={[1, 2, 3]}
       iconSize={4}
- features={[
+      features={[
         {
           title: 'Domiciliation',
           icon: FiBox,
@@ -423,8 +442,9 @@ const TestimonialsSection = () => {
 const PricingSection = () => {
   return (
     <Pricing {...pricing}>
-      <Text p="8" textAlign="center" color="muted">
-        VAT may be applicable depending on your location.
+      <Text p="8" textAlign="center" color="green">
+        Besoin d'aide ? Contactez-nous, nous sommes là pour vous accompagner à
+        chaque étape !
       </Text>
     </Pricing>
   )

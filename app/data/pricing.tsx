@@ -1,113 +1,142 @@
 export default {
-  title: 'Choisissez Votre Chemin Vers le Succès Entrepreneurial',
-  description:
-    'Des solutions professionnelles pour établir et développer votre entreprise au Maroc',
+  title: 'Nos tarifs',
+  description: 'Explorez nos offres tarifaires',
   plans: [
     {
       id: 'domiciliation',
-      title: 'Domiciliation Intelligente',
-      description: 'Adresse Professionnelle Premium dans des Emplacements Stratégiques',
-      price: '1500 MAD/an',
-      isRecommended: true,
+      title: 'Offre standard',
+      description: 'Tous frais inclus. 0 frais cachés.',
+      price: '3000 Dhs',
       features: [
         {
-          title: 'Adresse Professionnelle Prestigieuse dans des Zones Stratégiques',
+          title: 'Certificat négatif',
         },
         {
-          title: 'Système Professionnel de Gestion du Courrier',
+          title: 'Les statuts de votre société',
         },
         {
-          title: 'Gestion Sécurisée des Documents',
+          title: 'L’enregistrement des statuts et contrat de bail',
         },
         {
-          title: 'Notifications en Temps Réel pour le Courrier',
+          title: 'Inscription a la taxe profiessionnelle',
         },
         {
-          title: 'Service de Réception Dédié',
+          title: 'Immatriculation de votre société au RC',
         },
         {
-          title: 'Accès à une Salle de Réunion (2h/mois)',
+          title: "Publication de l'annonce légale",
         },
         {
-          title: 'Pack Identité Visuelle de l’Entreprise',
+          title: 'Publication au bulletin officiel',
         },
         {
-          title: 'Accès au Tableau de Bord Numérique 24/7',
+          title: 'Obtention de l’Identifiant Fiscal',
+        },
+        {
+          title: 'Affiliation à la CNSS',
         },
       ],
       action: {
-        href: '#',
+        href: '/contact?pack=basic',
       },
     },
     {
       id: 'company-creation',
-      title: 'Pack Lancement d’Entreprise',
-      description: 'Simplifiez la Création de Votre Société',
-      price: '3000 MAD',
+      title: 'Offre Domiciliation',
+      description:
+        'Tous frais inclus. 0 frais cachés. Inclus notamment la domiciliation',
+      price: '3900 Dhs',
+      isRecommended: true,
       features: [
         {
-          title: 'Enregistrement Rapide de Société (7-10 jours)',
+          title: 'Certificat négatif',
         },
         {
-          title: 'Préparation de Tous les Documents Légaux',
+          title: 'Les statuts de votre société',
         },
         {
-          title: 'Pack Domiciliation Intelligente Inclus',
+          title: 'L’enregistrement des statuts et contrat de bail',
         },
         {
-          title: 'Création d’un Identifiant Fiscal et Licence Professionnelle',
+          title: 'Inscription a la taxe profiessionnelle',
         },
         {
-          title: 'Assistance pour l’Ouverture de Compte Bancaire',
+          title: 'Immatriculation de votre société au RC',
         },
         {
-          title: 'Certificats Digitaux (ICE, RC, IF)',
+          title: "Publication de l'annonce légale",
         },
         {
-          title: 'Timbre de Société et Cartes de Visite',
+          title: 'Publication au bulletin officiel',
+        },
+        {
+          title: 'Obtention de l’Identifiant Fiscal',
+        },
+        {
+          title: 'Affiliation à la CNSS',
+        },
+        {
+          title: 'Domiciliation de votre société pendant 12 mois',
         },
         {
           title: 'Consultation Gratuite (1h)',
         },
       ],
       action: {
-        href: '#',
+        href: '/contact?pack=standard',
       },
     },
     {
       id: 'full-service',
-      title: 'Suite de Croissance Entreprise',
-      description: 'Solution Complète de Gestion d’Entreprise',
-      price: 'À partir de 5000 MAD/an',
+      title: 'Offre Premium',
+      description:
+        'Tous frais inclus. 0 frais cachés. Inclus également votre logo, votre carte de visite, et le cachet de votre société',
+      price: '4900 Dhs',
       features: [
         {
-          title: 'Avantages du Pack Lancement d’Entreprise',
+          title: 'Certificat négatif',
         },
         {
-          title: 'Gestion Comptable Complète',
+          title: 'Les statuts de votre société',
         },
         {
-          title: 'Rapports Financiers Mensuels',
+          title: 'L’enregistrement des statuts et contrat de bail',
         },
         {
-          title: 'Planification Fiscale et Déclarations',
+          title: 'Inscription a la taxe profiessionnelle',
         },
         {
-          title: 'Gestion de la Paie',
+          title: 'Immatriculation de votre société au RC',
         },
         {
-          title: 'Suivi de la Conformité Légale',
+          title: "Publication de l'annonce légale",
         },
         {
-          title: 'Revue Trimestrielle de l’Entreprise',
+          title: 'Publication au bulletin officiel',
         },
         {
-          title: 'Support Prioritaire et Gestionnaire Dédié',
+          title: 'Obtention de l’Identifiant Fiscal',
+        },
+        {
+          title: 'Affiliation à la CNSS',
+        },
+
+        {
+          title: 'Domiciliation de votre société pendant 12 mois',
+        },
+        {
+          title: 'Consultation Gratuite illimité',
+        },
+        {
+          title: 'Le cachet de votre société',
+        },
+        {
+          title: 'Comptabilité gratuite de 6 mois',
         },
       ],
       action: {
-        href: '#',
+        href: '/contact?pack=premium',
       },
     },
   ],
-};
+}

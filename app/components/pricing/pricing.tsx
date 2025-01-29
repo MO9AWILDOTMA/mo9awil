@@ -41,7 +41,7 @@ export const Pricing: React.FC<PricingProps> = (props) => {
     <Section id="pricing" pos="relative" {...rest}>
       <BackgroundGradient height="100%" />
       <Box zIndex="2" pos="relative">
-        <SectionTitle title={title} description={description}></SectionTitle>
+        <SectionTitle  title={title } description={description}></SectionTitle>
 
         <SimpleGrid columns={[1, null, 3]} spacing={4}>
           {plans?.map((plan) => (
@@ -71,8 +71,16 @@ export const Pricing: React.FC<PricingProps> = (props) => {
                   ),
                 )}
               </PricingFeatures>
-              <ButtonLink colorScheme="primary" {...plan.action}>
-                {plan.action.label || 'Sign Up'}
+              <ButtonLink
+                colorScheme="white"
+                rounded={'lg'}
+                textColor={'#8952E0'}
+                py={5}
+                _hover={{ bg: 'gray.300', color: 'purple.800' }}
+                transition="background 0.9s ease-in-out"
+                {...plan.action}
+              >
+                {plan.action.label || 'Choisissez un plan'}
               </ButtonLink>
             </PricingBox>
           ))}
@@ -144,9 +152,14 @@ const PricingBox: React.FC<PricingBoxProps> = (props) => {
       <Heading as="h3" size="md" fontWeight="bold" fontSize="lg" mb="2">
         {title}
       </Heading>
-      <Box color="muted">{description}</Box>
-      <Box fontSize="2xl" fontWeight="bold" py="4">
-        {price}
+      <Box color="muted" h={1} pb={20} fontSize={'13'}>{description}</Box>
+      <Box fontSize="2xl" py="4">
+        <Box fontWeight="bold" color={'#8952E0'}>
+          {price}{' '}
+          <Box fontSize={'10px'} display={'inline'} verticalAlign="super">
+            HT
+          </Box>
+        </Box>
       </Box>
       <VStack align="stretch" justifyContent="stretch" spacing="4" flex="1">
         {children}

@@ -1,0 +1,19 @@
+    /* components/WhatsAppIcon.module.css */
+.arrowIcon {
+  position: fixed;
+  bottom: 40px;
+  right: 45px;
+  z-index: 1000;
+  transform: scale(1); /* Initial scale */
+  transition: transform 2s ease-in-out;
+}
+.arrowIcon:hover {
+  opacity: 70%;
+  transform: scale(1.2);
+}
+
+.arrowIcon a {
+  text-decoration: none;
+  color: inherit;
+  background-color: aliceblue;
+}

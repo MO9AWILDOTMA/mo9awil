@@ -7,9 +7,9 @@ export default {
       avatar: '/static/images/avatar.jpg',
       children: (
         <>
-          "Le service de domiciliation et la création de notre société au
-          Luxembourg ont été parfaitement gérés. Leur expertise nous a permis de
-          développer notre présence européenne en toute confiance."
+          "Le service de domiciliation et la création de notre société au Maroc
+          ont été parfaitement gérés. Leur expertise nous a permis de développer
+          notre présence en toute confiance."
         </>
       ),
     },
@@ -19,21 +19,21 @@ export default {
       avatar: '/static/images/avatar2.jpg',
       children: (
         <>
-          "En tant qu'entreprise marocaine cherchant à s'établir au Luxembourg,
-          leur accompagnement professionnel a été crucial. Le processus de
-          création d'entreprise a été simple et transparent."
+          "m'a offert une solution complète pour créer mon entreprise en ligne.
+          Leur expertise juridique m'a permis d'éviter les pièges courants et de
+          prendre des décisions éclairées à chaque étape."
         </>
       ),
     },
     {
       name: 'Omar Tazi',
-      description: 'Directeur Financier, Global Trade Maghreb',
+      description: 'Directeur Financier',
       avatar: '/static/images/avatar3.jpg',
       children: (
         <>
           "Leurs services comptables et leur expertise fiscale sont
           exceptionnels. Ils comprennent parfaitement les besoins spécifiques
-          des entrepreneurs marocains au Luxembourg."
+          des entrepreneurs marocains"
         </>
       ),
     },
