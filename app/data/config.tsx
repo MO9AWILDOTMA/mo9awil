@@ -45,14 +45,14 @@ const siteConfig = {
     ],
   },
   footer: {
-    copyright: <>© 2024 mo9awil.ma. Tous droits réservés.</>,
+    copyright: <>© 2025 mo9awil.ma. Tous droits réservés.</>,
     links: [
       {
-        href: 'mailto:contact@votresociete.ma',
+        href: 'mailto:contact@mo9awil.ma',
         label: 'Contact',
       },
       {
-        href: 'https://linkedin.com/company/votresociete',
+        href: 'https://linkedin.com/company/mo9awil.ma',
         label: <FaLinkedin size="14" />,
       },
     ],
