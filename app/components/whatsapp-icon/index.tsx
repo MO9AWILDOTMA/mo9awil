@@ -3,8 +3,8 @@ import { FaWhatsapp } from 'react-icons/fa';
 import  './style.css'; // Optional: for styling
 
 const WhatsAppIcon = () => {
-  const phoneNumber = '212661373945'; // Replace with your phone number
-  const message = 'BGHIT NQAD CHARIKA!'; // Replace with your default message
+  const phoneNumber = '212522479947'; // Replace with your phone number
+  const message = 'BGHIT NQAD CHARIKA ASAAP!'; // Replace with your default message
 
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 

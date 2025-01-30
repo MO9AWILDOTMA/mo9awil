@@ -26,14 +26,21 @@ interface NavLinkProps extends LinkProps {
   label: string
   href?: string
   isActive?: boolean
+  onClose?: () => void // Add the onClose prop here
 }
 
-function NavLink({ href, children, isActive, ...rest }: NavLinkProps) {
+function NavLink({ href, children, isActive, onClose, ...rest }: NavLinkProps) {
   const pathname = usePathname()
   const bgActiveHoverColor = useColorModeValue('gray.100', 'whiteAlpha.100')
 
   const [, group] = href?.split('/') || []
   isActive = isActive ?? pathname?.includes(group)
+
+  const handleLinkClick = () => {
+    if (onClose) {
+      onClose() // Close the navigation when the link is clicked
+    }
+  }
 
   return (
     <Link
@@ -51,16 +58,12 @@ function NavLink({ href, children, isActive, ...rest }: NavLinkProps) {
       _hover={{
         bg: isActive ? 'purple.500' : bgActiveHoverColor,
       }}
+      onClick={handleLinkClick} // Add the onClick handler here
       {...rest}
     >
       {children}
     </Link>
   )
-}
-
-interface MobileNavContentProps {
-  isOpen?: boolean
-  onClose?: () => void
 }
 
 export function MobileNavContent(props: MobileNavContentProps) {
@@ -70,11 +73,7 @@ export function MobileNavContent(props: MobileNavContentProps) {
   const bgColor = useColorModeValue('whiteAlpha.900', 'blackAlpha.900')
 
   useRouteChanged(onClose)
-  console.log({ isOpen })
-  /**
-   * Scenario: Menu is open on mobile, and user resizes to desktop/tablet viewport.
-   * Result: We'll close the menu
-   */
+
   const showOnBreakpoint = useBreakpointValue({ base: true, lg: false })
 
   React.useEffect(() => {
@@ -121,6 +120,7 @@ export function MobileNavContent(props: MobileNavContentProps) {
                       <NavLink
                         href={href || `/#${id}`}
                         key={i}
+                        onClose={onClose} // Pass the onClose function here
                         {...(props as any)}
                       >
                         {label}
@@ -135,6 +135,11 @@ export function MobileNavContent(props: MobileNavContentProps) {
       )}
     </>
   )
+}
+
+interface MobileNavContentProps {
+  isOpen?: boolean
+  onClose?: () => void
 }
 
 export const MobileNavButton = React.forwardRef(
