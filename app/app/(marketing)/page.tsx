@@ -220,7 +220,7 @@ const HighlightsSection = () => {
         <VStack alignItems="flex-start" spacing="8">
           <Text color="muted" fontSize="xl">
             Faites confiance aux
-            <Em>conseillers juridiques les plus fiables du Maroc</Em> pour
+            <Em> conseillers juridiques les plus fiables du Maroc</Em> pour
             répondre à vos besoins professionnels. Notre équipe expérimentée
             offre des conseils d'experts et un accompagnement personnalisé tout
             au long de votre parcours entrepreneurial.
