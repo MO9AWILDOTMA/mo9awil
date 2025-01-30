@@ -5,7 +5,9 @@ import Mail from 'nodemailer/lib/mailer';
 export async function POST(request: NextRequest) {
   const { email, name, message, pack, phone } = await request.json();
   const transport = nodemailer.createTransport({
-    service: 'gmail',
+    host: 'smtp.zoho.com',
+            port: 465,
+            secure: true, // use SSL
     auth: {
       user: process.env.NEXT_PUBLIC_MY_EMAIL,
       pass: process.env.NEXT_PUBLIC_MY_PASSWORD,
