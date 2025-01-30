@@ -41,7 +41,7 @@ export const Pricing: React.FC<PricingProps> = (props) => {
     <Section id="pricing" pos="relative" {...rest}>
       <BackgroundGradient height="100%" />
       <Box zIndex="2" pos="relative">
-        <SectionTitle  title={title } description={description}></SectionTitle>
+        <SectionTitle title={title} description={description}></SectionTitle>
 
         <SimpleGrid columns={[1, null, 3]} spacing={4}>
           {plans?.map((plan) => (
@@ -147,12 +147,19 @@ const PricingBox: React.FC<PricingBoxProps> = (props) => {
         bg: 'blackAlpha.300',
         borderColor: 'gray.800',
       }}
+      _hover={{
+        transform: 'scale(1.04)',
+        transition: 'transform 0.4s ease-in-out', // Adding slow transition
+      }}
+      transition="transform 0.5s ease-in-out"
       {...rest}
     >
       <Heading as="h3" size="md" fontWeight="bold" fontSize="lg" mb="2">
         {title}
       </Heading>
-      <Box color="muted" h={1} pb={20} fontSize={'13'}>{description}</Box>
+      <Box color="muted" h={1} pb={20} fontSize={'13'}>
+        {description}
+      </Box>
       <Box fontSize="2xl" py="4">
         <Box fontWeight="bold" color={'#8952E0'}>
           {price}{' '}
