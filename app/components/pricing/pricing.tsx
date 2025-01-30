@@ -74,9 +74,9 @@ export const Pricing: React.FC<PricingProps> = (props) => {
               <ButtonLink
                 colorScheme="white"
                 rounded={'lg'}
-                textColor={'#8952E0'}
+                textColor={plan.isRecommended ? 'purple.800' :'purple.700'}
                 py={5}
-                _hover={{ bg: 'gray.300', color: 'purple.800' }}
+                _hover={{ bg: 'gray.300', color: 'purple.900' }}
                 transition="background 0.9s ease-in-out"
                 {...plan.action}
               >
