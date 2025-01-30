@@ -333,7 +333,7 @@ const ContactForm: NextPage = () => {
                   <Input
                     {...register('message', { required: false })}
                     type="text"
-                    placeholder="Laissez-nous un message, nous sommes là pour vous répondre rapidement !"
+                    placeholder="Laissez-nous un message, nous sommes là pour vous !"
                   />
                 </FormControl>
                 <Button
