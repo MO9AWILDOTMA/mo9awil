@@ -1,6 +1,10 @@
-import { ColorModeScript, theme } from '@chakra-ui/react'
+import { ColorModeScript, theme } from '@chakra-ui/react';
+import { Analytics } from '@vercel/analytics/react'
 
-import { Provider } from './provider'
+
+
+import { Provider } from './provider';
+
 
 export default function Layout(props: { children: React.ReactNode }) {
   const colorMode = theme.config.initialColorMode
@@ -28,7 +32,6 @@ export default function Layout(props: { children: React.ReactNode }) {
         <link rel="manifest" href="/static/favicons/manifest.json" />
       </head>
       <body className={`chakra-ui-${colorMode}`}>
-
         <ColorModeScript initialColorMode={colorMode} />
         <Provider>{props.children}</Provider>
       </body>
