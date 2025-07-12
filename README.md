@@ -1,42 +1,100 @@
-# Create - mo9awil.ma
-![mo9awil-ma-01-30-2025-07-04-AM](https://github.com/user-attachments/assets/e30adeef-72e3-42ec-b216-09728efbdb20)
-![mo9awil-ma-01-30-2025_07_13_AM](https://github.com/user-attachments/assets/449239bc-83fe-45fb-b706-c5ec172ee92a)
+````markdown
+# 🧑‍💼 Mo9awil — Entrepreneur Support Platform (v0)
 
-
-
-Welcome to **Creation.mo9awil.ma**, your one-stop solution for professional business creation services in Morocco. Our platform is designed to provide a seamless and efficient experience for entrepreneurs looking to establish their businesses with ease.
-
-## Features
-
-- **Comprehensive Services**: From domiciliation to company creation and accounting, we offer a full range of services tailored to your needs.
-- **Contact Form**: Easily get in touch with us through our contact form. Your inquiries are sent directly to our admin for a prompt response.
-- **WhatsApp Integration**: For quick assistance, use our WhatsApp icon to start a conversation instantly.
-- **User-Friendly Interface**: Built with a focus on user experience, our platform ensures a smooth and intuitive navigation.
-
-## Technologies Used
-
-- **Next.js**: For building a fast and scalable web application.
-- **NodeMailer**: To handle email communications efficiently.
-- **react-hook-form**: For managing form states and validations seamlessly.
-- **Chakra-UI**: To create a responsive and visually appealing user interface.
-- **Google Apps Script**: For automating backend processes and integrations.
-
-## How to Use
-
-1. **Explore Services**: Navigate through our offerings to find the service that suits your business needs.
-2. **Contact Us**: Fill out the contact form with your details and query. Our team will get back to you promptly.
-3. **Quick Chat**: Click on the WhatsApp icon for instant communication with our support team.
-
-## Getting Started
-
-To get started with **Creation.mo9awil.ma**, simply visit our website and explore the various services we offer. Whether you need help with domiciliation, company creation, or accounting, we are here to assist you every step of the way.
-
-## Support
-
-For any questions or support, please reach out to us through the contact form or via WhatsApp. We are committed to providing you with the best service and support.
-
-Thank you for choosing **Creation.mo9awil.ma** for your business creation needs. We look forward to helping you succeed in Morocco!
+Mo9awil (مقاول) is a modern SaaS platform tailored to help entrepreneurs in Morocco and the MENA region start, manage, and grow their businesses with ease. This is the **v0 landing page**, designed to showcase our full range of services and allow users to request a custom quote.
 
 ---
 
-**Note**: This README is designed to provide an overview of the **Creation.mo9awil.ma** platform and its features. For more detailed information, please visit our website.
+## 🌐 Live Preview
+
+[www.mo9awil.ma](https://www.mo9awil.ma)
+
+---
+
+## 🎯 Features
+
+- ✅ Responsive and modern UI/UX (Next.js + Tailwind CSS)
+- ✅ Multilingual Support: French 🇫🇷, English 🇬🇧
+- ✅ Quote Request Form connected to Google Sheets
+- ✅ RTL (Right-To-Left) support for Arabic
+- ✅ Fully customizable and scalable layout
+
+---
+
+## 💼 Services Displayed
+
+- 🏢 Company Creation
+- 📊 Accounting & Bookkeeping
+- 🧾 Invoice Generation
+- ⚖️ Legal Solutions & Free Legal Consultation
+- 🌐 Website Creation
+- 📱 Social Media Management
+- 📈 Marketing & SEO
+- 🎨 Branding & Visual Identity
+
+---
+
+## 🚀 Tech Stack
+
+- **Next.js** – React Framework
+- **Tailwind CSS** – Utility-first styling
+- **Framer Motion** – Smooth animations
+- **i18next / next-i18next** – Internationalization
+- **Google Sheets API** – Quote form backend (via Apps Script or webhook)
+
+---
+
+## 🧪 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/MO9AWILDOTMA/mo9awil.git
+cd mo9awil
+````
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Run the dev server
+
+```bash
+npm run dev
+```
+
+The app should be running at [http://localhost:3000](http://localhost:3000)
+
+---
+
+## 🌍 Internationalization (i18n)
+
+This project supports:
+
+* 🇫🇷 French (`/locales/fr`)
+* 🇬🇧 English (`/locales/en`)
+
+Translation files are located in `/public/locales/`.
+To add or correct a translation, edit the relevant `.json` file.
+
+## 📤 Google Sheets Integration
+
+The quote request form submits user input to a Google Sheet
+
+---
+
+## 📞 Contact
+
+For support or business inquiries:
+📧 [contact@mo9awil.ma](mailto:contact@mo9awil.ma)
+🌐 [www.mo9awil.ma](https://www.mo9awil.ma)
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+```
