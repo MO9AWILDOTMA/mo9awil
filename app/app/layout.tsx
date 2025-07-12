@@ -1,40 +1,32 @@
-import { ColorModeScript, theme } from '@chakra-ui/react';
-import { Analytics } from '@vercel/analytics/react'
+"use client"
 
+import type React from "react"
+import { useEffect, useState } from "react"
+import { Inter } from "next/font/google"
+import "./globals.css"
+import "./i18n"
+import i18n from "i18next"
 
+const inter = Inter({ subsets: ["latin"] })
 
-import { Provider } from './provider';
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  const [lang, setLang] = useState("en")
 
-
-export default function Layout(props: { children: React.ReactNode }) {
-  const colorMode = theme.config.initialColorMode
+  useEffect(() => {
+    setLang(i18n.language || "en")
+  }, [])
 
   return (
-    <html lang="en" data-theme={colorMode} style={{ colorScheme: colorMode }}>
-      <head>
-        <link
-          rel="apple-touch-icon"
-          sizes="76x76"
-          href="/static/favicons/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/static/favicons/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/static/favicons/favicon-16x16.png"
-        />
-        <link rel="manifest" href="/static/favicons/manifest.json" />
-      </head>
-      <body className={`chakra-ui-${colorMode}`}>
-        <ColorModeScript initialColorMode={colorMode} />
-        <Provider>{props.children}</Provider>
-      </body>
+    <html lang={lang} dir={lang === "ar" ? "rtl" : "ltr"}>
+      <body className={inter.className}>{children}</body>
     </html>
   )
 }
+
+// export const metadata = {
+//   generator: "v0.dev",
+// }
