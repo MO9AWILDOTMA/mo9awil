@@ -94,7 +94,9 @@ export function Footer({ t, year, navLinks, scrollToSection }: FooterProps) {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-blue-100 text-sm">&copy; {year} Mo9awil. {t("footer.rights")}</div>
             <div className="flex items-center space-x-6">
-              <LanguageSwitcher />
+                <div className="text-gray-500">
+                    <LanguageSwitcher />
+                </div>
               <div className="flex space-x-6 text-sm">
                 <a href="#" className="text-blue-100 hover:text-white transition-colors">
                   {t("footer.privacy")}
