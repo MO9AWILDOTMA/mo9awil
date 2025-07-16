@@ -135,12 +135,10 @@ export default function LandingPage() {
   ]
 
   const partners: Partner[] = [
-    { name: "TechCorp", logo: "/placeholder.svg?height=60&width=120" },
-    { name: "InnovateHub", logo: "/placeholder.svg?height=60&width=120" },
-    { name: "StartupLab", logo: "/placeholder.svg?height=60&width=120" },
-    { name: "BusinessPro", logo: "/placeholder.svg?height=60&width=120" },
-    { name: "GrowthPartners", logo: "/placeholder.svg?height=60&width=120" },
-    { name: "SuccessVentures", logo: "/placeholder.svg?height=60&width=120" },
+    { name: "AZHotels", logo: "/images/az-logo.png" },
+    { name: "HyundaiMAroc", logo: "/images/hyundai-logo.png" },
+    { name: "CinemaCamera", logo: "/images/camera-logo.jpg" },
+    { name: "ArtRoom", logo: "/images/artroom-logo.avif" },
   ]
 
   const navLinks: NavLink[] = [
