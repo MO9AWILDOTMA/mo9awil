@@ -32,11 +32,21 @@ export type NavLink = {
   label: string
 }
 
-export type FormData = {
+export interface QuoteFormData {
   name: string
   email: string
   phone: string
   services: string[]
-  selectedPack: string
+  selectedPack?: string
   message: string
+  language?: string
+  timezone?: string
+}
+
+
+export interface SubmissionResponse {
+  success: boolean
+  message: string
+  timestamp?: string
+  error?: string
 }

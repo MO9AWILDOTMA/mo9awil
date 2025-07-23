@@ -36,10 +36,11 @@ import { MissionPricingSection } from "@/components/landing-page/MissionPricingS
 import { CTASection } from "@/components/landing-page/CTASection"
 import { QuoteModal } from "@/components/landing-page/QuoteModal"
 import { Footer } from "@/components/landing-page/Footer"
-import { Service, WhyChooseUsItem, HowItWorksStep, Partner, NavLink, FormData } from "@/lib/types"
+import { Service, WhyChooseUsItem, HowItWorksStep, Partner, NavLink, QuoteFormData as FormData } from "@/lib/types"
+import { submitQuoteForm } from "@/lib/google-sheets"
 
 export default function LandingPage() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
@@ -162,16 +163,33 @@ export default function LandingPage() {
     setIsSubmitting(true)
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 2000))
-      setIsSubmitted(true)
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        services: [],
-        selectedPack: "",
-        message: "",
+      const payload = {
+        ...formData,
+        language: i18n.language || "unknown",
+        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || "unknown",
+      }
+
+      const response = await fetch("/api/submitQuote", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
       })
+
+      const result = await response.json()
+
+      if (result.success) {
+        setIsSubmitted(true)
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          services: [],
+          selectedPack: "",
+          message: "",
+        })
+      } else {
+        console.error("Submit error:", result.message)
+      }
     } catch (error) {
       console.error("Error submitting form:", error)
     } finally {

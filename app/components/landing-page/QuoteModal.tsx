@@ -8,7 +8,7 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { CheckCircle, Sparkles } from "lucide-react"
-import { FormData, Service } from '../../lib/types';
+import { QuoteFormData as FormData, Service } from '../../lib/types';
 
 
 interface QuoteModalProps {

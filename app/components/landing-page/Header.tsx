@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Dialog, DialogTrigger } from "@/components/ui/dialog"
 import { LanguageSwitcher } from "@/components/language-switcher"
 import { NavLink } from "@/lib/types"
+import { useTranslation } from "react-i18next"
 
 interface HeaderProps {
   navLinks: NavLink[]
