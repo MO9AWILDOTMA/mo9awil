@@ -8,7 +8,6 @@ const keyFile = JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT!)
 const SHEET_NAME = "Leads"
 
 export async function submitQuoteForm(data: QuoteFormData): Promise<SubmissionResponse> {
-  console.log("Loaded service account:", keyFile.client_email)
   try {
     const client = new JWT({
       email: keyFile.client_email,
