@@ -1,8 +1,6 @@
 import { google } from "googleapis"
 import { JWT } from "google-auth-library"
-import path from "path"
 import { QuoteFormData, SubmissionResponse } from "./types"
-import fs from "fs"
 
 const SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
 const SPREADSHEET_ID = process.env.NEXT_PUBLIC_SPREADSHEET_ID!
