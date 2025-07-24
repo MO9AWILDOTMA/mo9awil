@@ -6,14 +6,12 @@ import fs from "fs"
 
 const SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
 const SPREADSHEET_ID = process.env.NEXT_PUBLIC_SPREADSHEET_ID!
+const keyFile = JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT!)
 const SHEET_NAME = "Leads"
 
 export async function submitQuoteForm(data: QuoteFormData): Promise<SubmissionResponse> {
+  console.log("Loaded service account:", keyFile.client_email)
   try {
-    // Load service account credentials manually
-    const keyPath = path.join(process.cwd(), "app", "lib", "mo9awil-3bfdbb5b4581.json")
-    const keyFile = JSON.parse(fs.readFileSync(keyPath, "utf8"))
-
     const client = new JWT({
       email: keyFile.client_email,
       key: keyFile.private_key,
