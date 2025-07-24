@@ -4,7 +4,7 @@ import { QuoteFormData, SubmissionResponse } from "./types"
 
 const SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
 const SPREADSHEET_ID = process.env.NEXT_PUBLIC_SPREADSHEET_ID!
-const keyFile = JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT!)
+const keyFile = JSON.parse(process.env.NEXT_PUBLIC_GOOGLE_SERVICE_ACCOUNT!.replace(/\\n/g, '\n'))
 const SHEET_NAME = "Leads"
 
 export async function submitQuoteForm(data: QuoteFormData): Promise<SubmissionResponse> {
