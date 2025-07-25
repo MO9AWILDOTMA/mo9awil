@@ -38,22 +38,23 @@ export default function RootLayout({
             t.src=v;s=b.getElementsByTagName(e)[0];
             s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '2027503618057823');
+            fbq('init', '1754239391876136');
             fbq('track', 'PageView');
           `}
         </Script>
+
+
       </head>
         {/* Noscript fallback */}
       <body className={inter.className}>
-        <noscript>
-          <img
-            height="1"
-            width="1"
-            style={{ display: 'none' }}
-            src="https://www.facebook.com/tr?id=2027503618057823&ev=PageView&noscript=1"
-            alt=""
-          />
-        </noscript>
+          <noscript>
+            <img
+              height="1"
+              width="1"
+              style={{ display: 'none' }}
+              src="https://www.facebook.com/tr?id=1754239391876136&ev=PageView&noscript=1"
+            />
+          </noscript>
           {children}
       </body>
     </html>
