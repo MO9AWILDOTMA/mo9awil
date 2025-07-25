@@ -4,8 +4,6 @@
 import type React from "react"
 import { useState } from "react"
 import { useTranslation } from "react-i18next"
-import { motion } from "framer-motion"
-import { Dialog } from "@/components/ui/dialog"
 import {
   Building2,
   Calculator,
@@ -37,7 +35,7 @@ import { CTASection } from "@/components/landing-page/CTASection"
 import { QuoteModal } from "@/components/landing-page/QuoteModal"
 import { Footer } from "@/components/landing-page/Footer"
 import { Service, WhyChooseUsItem, HowItWorksStep, Partner, NavLink, QuoteFormData as FormData } from "@/lib/types"
-import { submitQuoteForm } from "@/lib/google-sheets"
+import { fbq } from "@/lib/fbPixel"
 
 export default function LandingPage() {
   const { t, i18n } = useTranslation()
@@ -187,6 +185,9 @@ export default function LandingPage() {
           selectedPack: "",
           message: "",
         })
+      fbq('trackCustom', 'ButtonClicked', {
+        buttonName: 'Quote',
+      });
       } else {
         console.error("Submit error:", result.message)
       }
