@@ -7,6 +7,7 @@ import "./globals.css"
 import "./i18n"
 import i18n from "i18next"
 import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import Script from "next/script"
 
 
@@ -26,6 +27,7 @@ export default function RootLayout({
   return (
     <html lang={lang} dir={lang === "ar" ? "rtl" : "ltr"}>
       <Analytics />
+      <SpeedInsights/>
        <head>
         {/* Meta Pixel Script */}
         <Script id="fb-pixel" strategy="afterInteractive">
