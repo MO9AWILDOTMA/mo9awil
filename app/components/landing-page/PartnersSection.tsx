@@ -31,14 +31,14 @@ export function PartnersSection({ t, partners }: PartnersSectionProps) {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full h-full gap-8 items-center"
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 w-full h-full gap-8 items-center"
         >
           {partners.map((partner) => (
             <div
               key={partner.name}
               className="flex cursor-pointer items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100"
             >
-              <Image width={800} height={800}
+              <Image width={900} height={1000}
                 src={partner.logo || "/placeholder.svg"}
                 alt={partner.name}
                 className="max-h-12 h-full w-full object-contain"

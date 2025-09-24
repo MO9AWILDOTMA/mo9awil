@@ -135,9 +135,10 @@ export default function LandingPage() {
 
   const partners: Partner[] = [
     { name: "AZHotels", logo: "/images/az-logo.png" },
-    { name: "HyundaiMAroc", logo: "/images/hyundai-logo.png" },
+    { name: "HyundaiMaroc", logo: "/images/hyundai-logo.png" },
     { name: "CinemaCamera", logo: "/images/camera-logo.jpg" },
     { name: "ArtRoom", logo: "/images/artroom-logo.avif" },
+    { name: "DadaSfia", logo: "/images/dada-sfia-logo.png" },
   ]
 
   const navLinks: NavLink[] = [

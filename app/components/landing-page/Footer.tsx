@@ -92,7 +92,7 @@ export function Footer({ t, year, navLinks, scrollToSection }: FooterProps) {
         {/* Bottom Bar */}
         <div className="border-t border-white/10 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-blue-100 text-sm">&copy; {year} Mo9awil. {t("footer.rights")}</div>
+            <div className="text-blue-100 text-sm">&copy; {year} Mo9awil.ma {t("footer.rights")}</div>
             <div className="flex items-center space-x-6">
                 <div className="text-gray-500">
                     <LanguageSwitcher />
