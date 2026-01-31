@@ -1,347 +1,640 @@
 import i18n from "i18next"
 import { initReactI18next } from "react-i18next"
 
-// Translation resources
+export const LANG_STORAGE_KEY = "mo9awil_language"
+
 const resources = {
-  en: {
-    translation: {
-      hero: {
-        title: "Everything You Need to Start and Grow Your Business",
-        subtitle: "Legal, Accounting, Branding, Marketing, and More – All in One Place.",
-        cta: "Get Started for Free",
-      },
-      services: {
-        title: "Our Services",
-        items: {
-          company_creation: {
-            title: "Company Creation",
-            description: "Complete business registration and legal setup",
-          },
-          accounting: {
-            title: "Accounting & Bookkeeping",
-            description: "Professional financial management and reporting",
-          },
-          invoicing: {
-            title: "Invoice Generation",
-            description: "Automated invoicing and payment tracking",
-          },
-          legal_assistance: {
-            title: "Legal Assistance",
-            description: "Expert legal guidance for your business",
-          },
-          legal_consultation: {
-            title: "Free Legal Consultation",
-            description: "Complimentary legal advice and support",
-          },
-          website_creation: {
-            title: "Website Creation",
-            description: "Professional websites that convert visitors",
-          },
-          social_media: {
-            title: "Social Media Management",
-            description: "Strategic social media presence and engagement",
-          },
-          digital_marketing: {
-            title: "Digital Marketing",
-            description: "Comprehensive online marketing strategies",
-          },
-          branding: {
-            title: "Branding & Identity Design",
-            description: "Complete brand identity and visual design",
-          },
-        },
-      },
-      why_choose: {
-        title: "Why Choose Mo9awil?",
-        items: {
-          transparent_pricing: {
-            title: "Transparent Pricing",
-            description: "No hidden fees, clear pricing structure",
-          },
-          local_experts: {
-            title: "Local Legal & Tax Experts",
-            description: "Deep knowledge of Moroccan business law",
-          },
-          all_in_one: {
-            title: "All-in-One Dashboard",
-            description: "Manage everything from one platform",
-          },
-          easy_to_use: {
-            title: "Easy to Use",
-            description: "Intuitive interface designed for entrepreneurs",
-          },
-        },
-      },
-      how_it_works: {
-        title: "How It Works",
-        steps: {
-          select_services: {
-            title: "Select Your Services",
-            description: "Choose what you need for your business",
-          },
-          fill_form: {
-            title: "Fill in the Form",
-            description: "Provide your business details and requirements",
-          },
-          we_handle: {
-            title: "Our Team Handles Everything",
-            description: "We take care of all the complex processes",
-          },
-          you_grow: {
-            title: "You Grow Your Business",
-            description: "Focus on what matters most - growing your business",
-          },
-        },
-      },
-      quote: {
-        title: "Need help getting started? Get a custom quote!",
-        subtitle: "Tell us about your project and we'll provide a tailored solution",
-        form: {
-          name: "Full Name",
-          email: "Email Address",
-          phone: "Phone Number",
-          services: "Services Needed",
-          message: "Message / Details",
-          message_placeholder: "Tell us more about your project...",
-          submit: "Get My Quote",
-          submitting: "Submitting...",
-        },
-        success: {
-          title: "Thank You!",
-          message: "We'll contact you soon with your custom quote.",
-        },
-      },
-      footer: {
-        description: "Empowering entrepreneurs across Morocco with comprehensive business solutions.",
-        rights: "All rights reserved.",
-      },
-    },
-  },
   fr: {
     translation: {
+      nav: {
+        home: "Accueil",
+        services: "Services",
+        portfolio: "Portfolio",
+        blog: "Blog",
+        about: "À Propos",
+        pricing: "Mission et Prix",
+        contact: "Contact",
+        ai_automation: "Automatisation IA",
+        get_quote: "Demander un devis",
+      },
       hero: {
-        title: "Tout Ce Dont Vous Avez Besoin Pour Créer et Développer Votre Entreprise",
-        subtitle: "Juridique, Comptabilité, Image de Marque, Marketing et Plus – Tout en Un Seul Endroit.",
-        cta: "Commencer Gratuitement",
+        badge_primary: "Agence digitale à Rabat",
+        badge_secondary: "5+ projets live",
+        main_title: "Transformez votre",
+        highlight: "Présence Digitale",
+        location: "au Maroc",
+        description:
+          "Développement web & app, image de marque, marketing digital et automatisation IA. Un partenaire local pour accélérer votre croissance.",
+        cta_primary: "Démarrer votre projet",
+        cta_secondary: "Voir nos réalisations",
+        stats: {
+          businesses: "Projets livrés",
+          success: "Multilingue",
+          support: "Support",
+        },
+      },
+      partners: {
+        title: "Ils nous font confiance",
+        subtitle: "Des marques et projets qui ont choisi Mo9awil",
       },
       services: {
         title: "Nos Services",
+        subtitle: "4 piliers pour construire, lancer et scaler votre présence digitale.",
         items: {
-          company_creation: {
-            title: "Création d'Entreprise",
-            description: "Enregistrement complet et configuration juridique",
+          web_app_development: {
+            title: "Création de Sites Web & Apps",
+            description: "Next.js, React, TypeScript — rapide, responsive et SEO-friendly.",
           },
-          accounting: {
-            title: "Comptabilité et Tenue de Livres",
-            description: "Gestion financière et reporting professionnels",
-          },
-          invoicing: {
-            title: "Génération de Factures",
-            description: "Facturation automatisée et suivi des paiements",
-          },
-          legal_assistance: {
-            title: "Assistance Juridique",
-            description: "Conseils juridiques experts pour votre entreprise",
-          },
-          legal_consultation: {
-            title: "Consultation Juridique Gratuite",
-            description: "Conseils juridiques gratuits et support",
-          },
-          website_creation: {
-            title: "Création de Sites Web",
-            description: "Sites web professionnels qui convertissent",
-          },
-          social_media: {
-            title: "Gestion des Réseaux Sociaux",
-            description: "Présence stratégique et engagement sur les réseaux",
+          branding_design: {
+            title: "Image de Marque et Design",
+            description: "Logo, identité visuelle, UI/UX et supports marketing.",
           },
           digital_marketing: {
             title: "Marketing Digital",
-            description: "Stratégies de marketing en ligne complètes",
+            description: "SEO, Ads, réseaux sociaux, email — orienté ROI.",
           },
-          branding: {
-            title: "Image de Marque et Design",
-            description: "Identité de marque complète et design visuel",
+          ai_automation: {
+            title: "IA & Automatisation",
+            description: "Automatisez vos opérations via des agents IA (agents.mo9awil.ma).",
           },
         },
+        cta: {
+          learn_more: "Découvrir",
+        },
+      },
+      portfolio: {
+        title: "Portfolio",
+        subtitle: "Des projets réels, déployés et accessibles en ligne.",
+        view_all: "Voir tout le portfolio",
+        view_live: "Voir le site",
+        view_case: "Voir l'étude de cas",
+        filters: {
+          all: "Tous",
+          ecommerce: "E-commerce",
+          corporate: "Sites Corporate",
+          hospitality: "Restauration & Hôtellerie",
+          professional: "Services Professionnels",
+        },
+      },
+      ai_section: {
+        title: "Automatisez Votre Entreprise avec des Agents IA",
+        description:
+          "Des automatisations intelligentes pour gagner du temps, réduire les erreurs et augmenter la performance.",
+        use_cases: {
+          ecommerce: "E-commerce (support, commandes, devis)",
+          restaurant: "Restaurant (réservations, menu, commandes)",
+          ops: "Ops & back-office (CRM, reporting, support)",
+          content: "Marketing (contenu, SEO, campagnes)",
+        },
+        cta: "Découvrir les solutions IA",
       },
       why_choose: {
-        title: "Pourquoi Choisir Mo9awil ?",
+        badge: "Pourquoi Mo9awil",
+        title: "Une équipe tech & créative, orientée résultats",
+        subtitle: "Un stack moderne, une expertise locale, et des livrables de qualité.",
         items: {
-          transparent_pricing: {
-            title: "Prix Transparents",
-            description: "Pas de frais cachés, structure tarifaire claire",
+          proven_track_record: {
+            title: "Projets live (5+)",
+            description: "E-commerce, corporate, hospitality, F&B — expérience multi-industrie.",
           },
-          local_experts: {
-            title: "Experts Locaux Juridiques et Fiscaux",
-            description: "Connaissance approfondie du droit des affaires marocain",
+          modern_stack: {
+            title: "Stack moderne",
+            description: "Next.js, React, TypeScript, Tailwind — performance et évolutivité.",
           },
-          all_in_one: {
-            title: "Tableau de Bord Tout-en-Un",
-            description: "Gérez tout depuis une seule plateforme",
+          bilingual: {
+            title: "Multilingue",
+            description: "FR/AR/EN — contenu et UX adaptés au marché marocain.",
           },
-          easy_to_use: {
-            title: "Facile à Utiliser",
-            description: "Interface intuitive conçue pour les entrepreneurs",
+          ai_first: {
+            title: "Approche IA-first",
+            description: "Automatisation et agents IA via agents.mo9awil.ma (lien externe).",
           },
         },
       },
       how_it_works: {
-        title: "Comment Ça Marche",
+        badge: "Process",
+        title: "Un process simple en 4 étapes",
+        subtitle: "De l'idée au lancement, avec visibilité et accompagnement.",
         steps: {
           select_services: {
-            title: "Sélectionnez Vos Services",
-            description: "Choisissez ce dont vous avez besoin pour votre entreprise",
+            title: "Découverte",
+            description: "On clarifie vos objectifs, votre audience et vos priorités.",
           },
           fill_form: {
-            title: "Remplissez le Formulaire",
-            description: "Fournissez les détails et exigences de votre entreprise",
+            title: "Brief & devis",
+            description: "Vous partagez vos besoins, on propose une solution et un plan.",
           },
           we_handle: {
-            title: "Notre Équipe S'Occupe de Tout",
-            description: "Nous prenons en charge tous les processus complexes",
+            title: "Design & développement",
+            description: "UX/UI, dev, contenu et intégrations — itérations rapides.",
           },
           you_grow: {
-            title: "Vous Développez Votre Entreprise",
-            description: "Concentrez-vous sur l'essentiel - développer votre entreprise",
+            title: "Lancement & optimisation",
+            description: "Mise en ligne, SEO, suivi et améliorations continues.",
           },
         },
       },
+      pricing: {
+        badge: "Mission & Prix",
+        title: "Des packs clairs, un devis sur-mesure",
+        description:
+          "Choisissez un pack pour démarrer, puis ajustez selon votre scope (design, marketing, IA, etc.).",
+        popular: "Le plus populaire",
+        get_started: "Demander un devis",
+        debutant: {
+          title: "Débutant",
+          description: "Pour lancer rapidement une présence en ligne.",
+          features: [
+            "Site vitrine responsive",
+            "UI/UX moderne",
+            "SEO de base",
+            "Formulaire de contact",
+          ],
+        },
+        professionnel: {
+          title: "Professionnel",
+          description: "Pour une marque solide et une acquisition prête.",
+          features: [
+            "Tout dans Débutant",
+            "Pages/sections avancées",
+            "Optimisation performance",
+            "Analytics & tracking",
+            "Support prioritaire",
+          ],
+        },
+        entreprise: {
+          title: "Entreprise",
+          description: "Pour des besoins complexes et scalables.",
+          features: [
+            "Tout dans Professionnel",
+            "E-commerce / app web / PWA",
+            "Intégrations (CRM, paiement, booking)",
+            "Automatisations IA (lien externe)",
+            "Accompagnement dédié",
+          ],
+        },
+      },
+      cta: {
+        title: "Prêt à transformer votre présence digitale ?",
+        description: "Parlez-nous de votre projet et recevez une proposition claire et rapide.",
+        button: "Obtenir un devis",
+      },
       quote: {
-        title: "Besoin d'aide pour commencer ? Obtenez un devis personnalisé !",
-        subtitle: "Parlez-nous de votre projet et nous fournirons une solution sur mesure",
+        title: "Demande de devis",
+        subtitle: "Répondez en 1 minute — on vous recontacte rapidement.",
+        estimate: "Estimation délai",
+        days: "jours",
+        book_call: "Réserver un appel",
         form: {
-          name: "Nom Complet",
-          email: "Adresse Email",
-          phone: "Numéro de Téléphone",
-          services: "Services Nécessaires",
-          message: "Message / Détails",
-          message_placeholder: "Parlez-nous de votre projet...",
-          submit: "Obtenir Mon Devis",
-          submitting: "Envoi en cours...",
+          name: "Nom complet",
+          email: "Adresse email",
+          phone: "Téléphone",
+          package: "Choisir un pack",
+          services: "Services",
+          message: "Message / détails",
+          message_placeholder: "Décrivez votre projet, vos liens, vos inspirations…",
+          submit: "Envoyer",
+          submitting: "Envoi…",
         },
         success: {
           title: "Merci !",
-          message: "Nous vous contacterons bientôt avec votre devis personnalisé.",
+          message: "Nous vous contacterons bientôt avec un devis personnalisé.",
+        },
+        error: {
+          title: "Erreur",
+          message: "Impossible d'envoyer votre demande pour le moment.",
         },
       },
       footer: {
-        description: "Autonomiser les entrepreneurs à travers le Maroc avec des solutions d'affaires complètes.",
+        description:
+          "Agence digitale à Rabat — web/app, design, marketing et automatisation IA (via agents.mo9awil.ma).",
+        quick_links: "Liens rapides",
+        contact: "Contact",
+        location: "Rabat, Maroc",
+        agents_link: "Agents IA & Automatisation",
+        newsletter_title: "Newsletter",
+        newsletter_description: "Recevez des conseils pratiques (web, marketing, IA) — 1 email / mois max.",
+        newsletter_placeholder: "Votre email",
+        newsletter_button: "S'inscrire",
+        newsletter_hint: "Vous pouvez vous désinscrire à tout moment.",
+        newsletter_success: "Inscription confirmée",
+        newsletter_error: "Échec de l'inscription",
+        privacy: "Politique de Confidentialité",
+        terms: "Conditions d'Utilisation",
+        cookies: "Politique de Cookies",
+        refund: "Politique de Remboursement",
+        data_protection: "Protection des Données",
         rights: "Tous droits réservés.",
+      },
+      pages: {
+        about: {
+          title: "À Propos",
+        },
+        contact: {
+          title: "Contact",
+        },
       },
     },
   },
   ar: {
     translation: {
+      nav: {
+        home: "الرئيسية",
+        services: "الخدمات",
+        portfolio: "أعمالنا",
+        blog: "مدونة",
+        about: "حولنا",
+        pricing: "المهمة والأسعار",
+        contact: "اتصل بنا",
+        ai_automation: "أتمتة بالذكاء الاصطناعي",
+        get_quote: "اطلب عرض سعر",
+      },
       hero: {
-        title: "كل ما تحتاجه لبدء وتنمية عملك",
-        subtitle: "القانونية، المحاسبة، العلامة التجارية، التسويق، والمزيد - كل شيء في مكان واحد.",
-        cta: "ابدأ مجاناً",
+        badge_primary: "وكالة رقمية في الرباط",
+        badge_secondary: "أكثر من 5 مشاريع مباشرة",
+        main_title: "طوّر",
+        highlight: "حضورك الرقمي",
+        location: "في المغرب",
+        description:
+          "تطوير مواقع وتطبيقات، هوية بصرية، تسويق رقمي، وأتمتة بالذكاء الاصطناعي. شريك محلي لتسريع نموّك.",
+        cta_primary: "ابدأ مشروعك",
+        cta_secondary: "شاهد أعمالنا",
+        stats: {
+          businesses: "مشاريع",
+          success: "متعدد اللغات",
+          support: "الدعم",
+        },
+      },
+      partners: {
+        title: "يثق بنا عملاؤنا",
+        subtitle: "علامات ومشاريع اختارت مو9اول",
       },
       services: {
         title: "خدماتنا",
+        subtitle: "أربع ركائز لبناء حضورك الرقمي وإطلاقه وتطويره.",
         items: {
-          company_creation: {
-            title: "إنشاء الشركات",
-            description: "تسجيل الأعمال الكامل والإعداد القانوني",
+          web_app_development: {
+            title: "تطوير مواقع وتطبيقات",
+            description: "Next.js و React و TypeScript — سريع ومتجاوب ومحسّن لمحركات البحث.",
           },
-          accounting: {
-            title: "المحاسبة ومسك الدفاتر",
-            description: "إدارة مالية مهنية وإعداد التقارير",
-          },
-          invoicing: {
-            title: "إنشاء الفواتير",
-            description: "فوترة آلية وتتبع المدفوعات",
-          },
-          legal_assistance: {
-            title: "المساعدة القانونية",
-            description: "إرشاد قانوني خبير لعملك",
-          },
-          legal_consultation: {
-            title: "استشارة قانونية مجانية",
-            description: "مشورة قانونية مجانية ودعم",
-          },
-          website_creation: {
-            title: "إنشاء المواقع الإلكترونية",
-            description: "مواقع ويب احترافية تحول الزوار",
-          },
-          social_media: {
-            title: "إدارة وسائل التواصل الاجتماعي",
-            description: "حضور استراتيجي ومشاركة على وسائل التواصل",
+          branding_design: {
+            title: "الهوية البصرية والتصميم",
+            description: "شعار وهوية بصرية وتجربة مستخدم وتصاميم تسويقية.",
           },
           digital_marketing: {
             title: "التسويق الرقمي",
-            description: "استراتيجيات تسويق شاملة عبر الإنترنت",
+            description: "SEO وإعلانات وشبكات اجتماعية وبريد — موجّه للنتائج.",
           },
-          branding: {
-            title: "العلامة التجارية وتصميم الهوية",
-            description: "هوية علامة تجارية كاملة وتصميم بصري",
+          ai_automation: {
+            title: "الذكاء الاصطناعي والأتمتة",
+            description: "أتمتة عملياتك عبر وكلاء ذكاء اصطناعي (agents.mo9awil.ma).",
           },
         },
+        cta: {
+          learn_more: "اكتشف",
+        },
+      },
+      portfolio: {
+        title: "أعمالنا",
+        subtitle: "مشاريع حقيقية ومباشرة على الإنترنت.",
+        view_all: "عرض كل الأعمال",
+        view_live: "عرض الموقع",
+        view_case: "دراسة الحالة",
+        filters: {
+          all: "الكل",
+          ecommerce: "متاجر إلكترونية",
+          corporate: "مواقع شركات",
+          hospitality: "مطاعم وفنادق",
+          professional: "خدمات مهنية",
+        },
+      },
+      ai_section: {
+        title: "أتمت عملك بواسطة وكلاء الذكاء الاصطناعي",
+        description: "أتمتة ذكية لتوفير الوقت وتقليل الأخطاء ورفع الأداء.",
+        use_cases: {
+          ecommerce: "التجارة الإلكترونية (دعم، طلبات، عروض)",
+          restaurant: "المطاعم (حجوزات، قائمة، طلبات)",
+          ops: "العمليات (CRM، تقارير، دعم)",
+          content: "التسويق (محتوى، SEO، حملات)",
+        },
+        cta: "اكتشف حلول الذكاء الاصطناعي",
       },
       why_choose: {
-        title: "لماذا تختار مقاول؟",
+        badge: "لماذا مو9اول",
+        title: "فريق تقني وإبداعي يركز على النتائج",
+        subtitle: "تقنيات حديثة وخبرة محلية وتسليم عالي الجودة.",
         items: {
-          transparent_pricing: {
-            title: "أسعار شفافة",
-            description: "لا توجد رسوم مخفية، هيكل تسعير واضح",
+          proven_track_record: {
+            title: "مشاريع مباشرة (5+)",
+            description: "تجارة إلكترونية وشركات وضيافة — خبرة متعددة المجالات.",
           },
-          local_experts: {
-            title: "خبراء قانونيون وضريبيون محليون",
-            description: "معرفة عميقة بقانون الأعمال المغربي",
+          modern_stack: {
+            title: "تقنيات حديثة",
+            description: "Next.js و React و TypeScript و Tailwind — أداء وقابلية للتوسع.",
           },
-          all_in_one: {
-            title: "لوحة تحكم شاملة",
-            description: "إدارة كل شيء من منصة واحدة",
+          bilingual: {
+            title: "متعدد اللغات",
+            description: "FR/AR/EN — محتوى وتجربة مناسبة للسوق المغربي.",
           },
-          easy_to_use: {
-            title: "سهل الاستخدام",
-            description: "واجهة بديهية مصممة لرجال الأعمال",
+          ai_first: {
+            title: "منهج IA-first",
+            description: "أتمتة ووكلاء ذكاء اصطناعي عبر agents.mo9awil.ma (رابط خارجي).",
           },
         },
       },
       how_it_works: {
-        title: "كيف يعمل",
+        badge: "الطريقة",
+        title: "أربع خطوات بسيطة",
+        subtitle: "من الفكرة إلى الإطلاق مع وضوح ومتابعة.",
         steps: {
           select_services: {
-            title: "اختر خدماتك",
-            description: "اختر ما تحتاجه لعملك",
+            title: "اكتشاف",
+            description: "نحدد الأهداف والجمهور والأولويات.",
           },
           fill_form: {
-            title: "املأ النموذج",
-            description: "قدم تفاصيل عملك ومتطلباتك",
+            title: "ملخص وعرض",
+            description: "تشارك متطلباتك ونقترح الحل والخطة.",
           },
           we_handle: {
-            title: "فريقنا يتولى كل شيء",
-            description: "نحن نتولى جميع العمليات المعقدة",
+            title: "تصميم وتطوير",
+            description: "UX/UI وتطوير وتكاملات — تكرارات سريعة.",
           },
           you_grow: {
-            title: "أنت تنمي عملك",
-            description: "ركز على الأهم - تنمية عملك",
+            title: "إطلاق وتحسين",
+            description: "نشر، SEO، متابعة وتحسين مستمر.",
           },
         },
       },
+      pricing: {
+        badge: "المهمة والأسعار",
+        title: "باقات واضحة + عرض مخصص",
+        description: "اختر باقة للانطلاق ثم نعدل حسب نطاق مشروعك (تصميم، تسويق، IA...).",
+        popular: "الأكثر طلباً",
+        get_started: "اطلب عرض سعر",
+        debutant: {
+          title: "مبتدئ",
+          description: "لإطلاق حضورك بسرعة.",
+          features: ["موقع تعريفي متجاوب", "تصميم حديث", "SEO أساسي", "نموذج تواصل"],
+        },
+        professionnel: {
+          title: "محترف",
+          description: "لهوية قوية واكتساب جاهز.",
+          features: ["كل شيء في مبتدئ", "صفحات متقدمة", "تحسين الأداء", "تحليلات وتتبع", "دعم أولوية"],
+        },
+        entreprise: {
+          title: "شركة",
+          description: "لاحتياجات معقدة قابلة للتوسع.",
+          features: [
+            "كل شيء في محترف",
+            "متجر إلكتروني / تطبيق ويب / PWA",
+            "تكاملات (CRM، دفع، حجز)",
+            "أتمتة IA (رابط خارجي)",
+            "متابعة مخصصة",
+          ],
+        },
+      },
+      cta: {
+        title: "جاهز لتطوير حضورك الرقمي؟",
+        description: "أخبرنا عن مشروعك وسنقترح حلاً واضحاً وبسرعة.",
+        button: "اطلب عرض سعر",
+      },
       quote: {
-        title: "تحتاج مساعدة للبدء؟ احصل على عرض أسعار مخصص!",
-        subtitle: "أخبرنا عن مشروعك وسنقدم حلاً مخصصاً",
+        title: "طلب عرض سعر",
+        subtitle: "دقيقة واحدة — وسنتواصل معك بسرعة.",
+        estimate: "تقدير المدة",
+        days: "يوماً",
+        book_call: "احجز مكالمة",
         form: {
           name: "الاسم الكامل",
-          email: "عنوان البريد الإلكتروني",
-          phone: "رقم الهاتف",
-          services: "الخدمات المطلوبة",
+          email: "البريد الإلكتروني",
+          phone: "الهاتف",
+          package: "اختر باقة",
+          services: "الخدمات",
           message: "رسالة / تفاصيل",
-          message_placeholder: "أخبرنا المزيد عن مشروعك...",
-          submit: "احصل على عرض السعر",
-          submitting: "جاري الإرسال...",
+          message_placeholder: "اشرح مشروعك وروابطك وأمثلتك…",
+          submit: "إرسال",
+          submitting: "جارٍ الإرسال…",
         },
         success: {
           title: "شكراً لك!",
-          message: "سنتواصل معك قريباً بعرض الأسعار المخصص.",
+          message: "سنتواصل معك قريباً بعرض سعر مخصص.",
+        },
+        error: {
+          title: "خطأ",
+          message: "تعذر إرسال الطلب حالياً.",
         },
       },
       footer: {
-        description: "تمكين رجال الأعمال في جميع أنحاء المغرب بحلول أعمال شاملة.",
+        description: "وكالة رقمية في الرباط — تطوير، تصميم، تسويق، وأتمتة IA (via agents.mo9awil.ma).",
+        quick_links: "روابط سريعة",
+        contact: "اتصل بنا",
+        location: "الرباط، المغرب",
+        agents_link: "وكلاء IA والأتمتة",
+        newsletter_title: "النشرة",
+        newsletter_description: "نصائح عملية (ويب، تسويق، IA) — بريد واحد شهرياً كحد أقصى.",
+        newsletter_placeholder: "بريدك الإلكتروني",
+        newsletter_button: "تسجيل",
+        newsletter_hint: "يمكنك إلغاء الاشتراك في أي وقت.",
+        newsletter_success: "تم التسجيل بنجاح",
+        newsletter_error: "فشل التسجيل",
+        privacy: "سياسة الخصوصية",
+        terms: "شروط الاستخدام",
+        cookies: "سياسة ملفات الارتباط",
+        refund: "سياسة الاسترجاع",
+        data_protection: "حماية البيانات",
         rights: "جميع الحقوق محفوظة.",
+      },
+    },
+  },
+  en: {
+    translation: {
+      nav: {
+        home: "Home",
+        services: "Services",
+        portfolio: "Portfolio",
+        blog: "Blog",
+        about: "About",
+        pricing: "Pricing",
+        contact: "Contact",
+        ai_automation: "AI Automation",
+        get_quote: "Get a Quote",
+      },
+      hero: {
+        badge_primary: "Digital agency in Rabat",
+        badge_secondary: "5+ live projects",
+        main_title: "Transform your",
+        highlight: "Digital Presence",
+        location: "in Morocco",
+        description:
+          "Web & app development, branding, digital marketing and AI automation. A local partner to accelerate your growth.",
+        cta_primary: "Start your project",
+        cta_secondary: "See our work",
+        stats: {
+          businesses: "Projects",
+          success: "Multilingual",
+          support: "Support",
+        },
+      },
+      partners: {
+        title: "Trusted by clients",
+        subtitle: "Brands and projects that chose Mo9awil",
+      },
+      services: {
+        title: "Services",
+        subtitle: "4 pillars to build and scale your digital presence.",
+        items: {
+          web_app_development: {
+            title: "Websites & Apps",
+            description: "Next.js, React, TypeScript — fast, responsive and SEO-friendly.",
+          },
+          branding_design: {
+            title: "Branding & Design",
+            description: "Logo, brand identity, UI/UX and marketing assets.",
+          },
+          digital_marketing: {
+            title: "Digital Marketing",
+            description: "SEO, Ads, social media, email — ROI driven.",
+          },
+          ai_automation: {
+            title: "AI & Automation",
+            description: "Automate operations with AI agents (agents.mo9awil.ma).",
+          },
+        },
+        cta: {
+          learn_more: "Learn more",
+        },
+      },
+      portfolio: {
+        title: "Portfolio",
+        subtitle: "Real, live projects you can visit online.",
+        view_all: "View portfolio",
+        view_live: "View live",
+        view_case: "View case study",
+        filters: {
+          all: "All",
+          ecommerce: "E-commerce",
+          corporate: "Corporate Websites",
+          hospitality: "Restaurant & Hospitality",
+          professional: "Professional Services",
+        },
+      },
+      ai_section: {
+        title: "Automate your business with AI agents",
+        description: "Smart automation to save time, reduce errors, and increase performance.",
+        use_cases: {
+          ecommerce: "E-commerce (support, orders, quotes)",
+          restaurant: "Restaurant (bookings, menu, orders)",
+          ops: "Ops (CRM, reporting, support)",
+          content: "Marketing (content, SEO, campaigns)",
+        },
+        cta: "Explore AI solutions",
+      },
+      why_choose: {
+        badge: "Why Mo9awil",
+        title: "A tech + creative team, focused on results",
+        subtitle: "Modern stack, local expertise, high-quality delivery.",
+        items: {
+          proven_track_record: {
+            title: "Live projects (5+)",
+            description: "E-commerce, corporate, hospitality and F&B — multi-industry experience.",
+          },
+          modern_stack: {
+            title: "Modern stack",
+            description: "Next.js, React, TypeScript, Tailwind — performance and scalability.",
+          },
+          bilingual: {
+            title: "Multilingual",
+            description: "FR/AR/EN — content and UX adapted to the Moroccan market.",
+          },
+          ai_first: {
+            title: "AI-first approach",
+            description: "Automation and AI agents via agents.mo9awil.ma (external link).",
+          },
+        },
+      },
+      how_it_works: {
+        badge: "Process",
+        title: "A simple 4-step process",
+        subtitle: "From idea to launch, with visibility and support.",
+        steps: {
+          select_services: { title: "Discovery", description: "We align on goals, audience and priorities." },
+          fill_form: { title: "Brief & quote", description: "We propose a solution and a clear plan." },
+          we_handle: { title: "Design & build", description: "UX/UI, dev, content and integrations." },
+          you_grow: { title: "Launch & optimize", description: "Go live, SEO, tracking and iterations." },
+        },
+      },
+      pricing: {
+        badge: "Mission & Pricing",
+        title: "Clear packages, custom quote",
+        description: "Pick a package to start, then adjust depending on scope (design, marketing, AI...).",
+        popular: "Most popular",
+        get_started: "Get a quote",
+        debutant: {
+          title: "Starter",
+          description: "Launch quickly.",
+          features: ["Responsive website", "Modern UI/UX", "Basic SEO", "Contact form"],
+        },
+        professionnel: {
+          title: "Professional",
+          description: "Brand-ready & growth-ready.",
+          features: ["Everything in Starter", "Advanced sections", "Performance optimization", "Analytics", "Priority support"],
+        },
+        entreprise: {
+          title: "Enterprise",
+          description: "Complex and scalable.",
+          features: [
+            "Everything in Professional",
+            "E-commerce / web app / PWA",
+            "Integrations (CRM, payments, booking)",
+            "AI automation (external link)",
+            "Dedicated support",
+          ],
+        },
+      },
+      cta: {
+        title: "Ready to transform your digital presence?",
+        description: "Tell us about your project and get a clear proposal quickly.",
+        button: "Get a quote",
+      },
+      quote: {
+        title: "Project inquiry",
+        subtitle: "1 minute — we’ll get back to you quickly.",
+        estimate: "Estimated timeline",
+        days: "days",
+        book_call: "Book a call",
+        form: {
+          name: "Full name",
+          email: "Email",
+          phone: "Phone",
+          package: "Choose a package",
+          services: "Services",
+          message: "Message / details",
+          message_placeholder: "Describe your project, links, inspirations…",
+          submit: "Send",
+          submitting: "Sending…",
+        },
+        success: { title: "Thanks!", message: "We’ll get back to you with a tailored quote." },
+        error: { title: "Error", message: "Could not submit your request." },
+      },
+      footer: {
+        description: "Digital agency in Rabat — web/app, design, marketing and AI automation (via agents.mo9awil.ma).",
+        quick_links: "Quick links",
+        contact: "Contact",
+        location: "Rabat, Morocco",
+        agents_link: "AI Agents & Automation",
+        newsletter_title: "Newsletter",
+        newsletter_description: "Practical tips (web, marketing, AI) — max 1 email/month.",
+        newsletter_placeholder: "Your email",
+        newsletter_button: "Subscribe",
+        newsletter_hint: "Unsubscribe anytime.",
+        newsletter_success: "Subscribed",
+        newsletter_error: "Subscription failed",
+        privacy: "Privacy Policy",
+        terms: "Terms of Service",
+        cookies: "Cookie Policy",
+        refund: "Refund Policy",
+        data_protection: "Data Protection",
+        rights: "All rights reserved.",
       },
     },
   },
@@ -349,11 +642,9 @@ const resources = {
 
 i18n.use(initReactI18next).init({
   resources,
-  lng: "en",
-  fallbackLng: "en",
-  interpolation: {
-    escapeValue: false,
-  },
+  lng: "fr",
+  fallbackLng: "fr",
+  interpolation: { escapeValue: false },
 })
 
 export default i18n

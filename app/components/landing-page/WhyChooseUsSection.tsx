@@ -3,15 +3,19 @@
 
 import { motion } from "framer-motion"
 import { Badge } from "@/components/ui/badge"
-import { Award } from "lucide-react"
-import { WhyChooseUsItem } from "@/lib/types"
+import { Award, Cpu, Languages, Sparkles } from "lucide-react"
+import { useTranslation } from "react-i18next"
 
-interface WhyChooseUsSectionProps {
-  t: (key: string) => string
-  whyChooseUs: WhyChooseUsItem[]
-}
+const ITEMS = [
+  { key: "proven_track_record", icon: Award },
+  { key: "modern_stack", icon: Cpu },
+  { key: "bilingual", icon: Languages },
+  { key: "ai_first", icon: Sparkles },
+] as const
 
-export function WhyChooseUsSection({ t, whyChooseUs }: WhyChooseUsSectionProps) {
+export function WhyChooseUsSection() {
+  const { t } = useTranslation()
+
   return (
     <section
       id="about"
@@ -27,16 +31,14 @@ export function WhyChooseUsSection({ t, whyChooseUs }: WhyChooseUsSectionProps) 
         >
           <Badge className="mb-4 bg-white/20 text-white border-white/30">
             <Award className="w-4 h-4 mr-2" />
-            Why Choose Us
+            {t("why_choose.badge")}
           </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Trusted by Entrepreneurs</h2>
-          <p className="text-xl text-blue-100 max-w-2xl mx-auto">
-            Join thousands of successful businesses that chose Mo9awil for their growth journey
-          </p>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">{t("why_choose.title")}</h2>
+          <p className="text-xl text-blue-100 max-w-2xl mx-auto">{t("why_choose.subtitle")}</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {whyChooseUs.map((item, index) => (
+          {ITEMS.map((item, index) => (
             <motion.div
               key={item.key}
               initial={{ opacity: 0, y: 20 }}
@@ -47,7 +49,7 @@ export function WhyChooseUsSection({ t, whyChooseUs }: WhyChooseUsSectionProps) 
             >
               <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 hover:bg-white/20 transition-all duration-300 group-hover:scale-105">
                 <div className="w-16 h-16 mx-auto mb-6 bg-white/20 rounded-2xl flex items-center justify-center group-hover:bg-white/30 transition-colors duration-300">
-                  <item.icon className={`h-8 w-8 text-white`} />
+                  <item.icon className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-white">{t(`why_choose.items.${item.key}.title`)}</h3>
                 <p className="text-blue-100 leading-relaxed">{t(`why_choose.items.${item.key}.description`)}</p>

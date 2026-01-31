@@ -4,14 +4,16 @@
 import { motion } from "framer-motion"
 import { Partner } from "@/lib/types"
 import Image from "next/image"
+import { useTranslation } from "react-i18next"
 
 
 interface PartnersSectionProps {
-  t: (key: string) => string
   partners: Partner[]
 }
 
-export function PartnersSection({ t, partners }: PartnersSectionProps) {
+export function PartnersSection({ partners }: PartnersSectionProps) {
+  const { t } = useTranslation()
+
   return (
     <section id="partners" className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -38,7 +40,9 @@ export function PartnersSection({ t, partners }: PartnersSectionProps) {
               key={partner.name}
               className="flex cursor-pointer items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100"
             >
-              <Image width={900} height={1000}
+              <Image
+                width={220}
+                height={80}
                 src={partner.logo || "/placeholder.svg"}
                 alt={partner.name}
                 className="max-h-12 h-full w-full object-contain"

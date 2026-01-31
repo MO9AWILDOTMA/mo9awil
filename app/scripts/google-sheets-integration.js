@@ -140,15 +140,15 @@ ${Array.isArray(data.services) ? "• " + data.services.join("\n• ") : data.se
 
 Our team will review your request and get back to you within 24 hours at ${data.email}.
 
-If you have any urgent questions, please don't hesitate to contact us at support@mo9awil.ma.
+If you have any urgent questions, please don't hesitate to contact us at contact@mo9awil.com.
 
 Best regards,
 Mo9awil Team
 
 ---
-Mo9awil Business Solutions
+Mo9awil Digital Agency
 Website: https://mo9awil.ma
-Email: support@mo9awil.ma
+Email: contact@mo9awil.com
     `;
 
     GmailApp.sendEmail(data.email, subject, body);
@@ -163,7 +163,7 @@ function testSetup() {
     name: "Test User",
     email: "test@example.com",
     phone: "+212600000000",
-    services: ["company_creation", "website_creation"],
+    services: ["web_app_development", "digital_marketing"],
     message: "This is a test submission",
     language: "en",
     timezone: "Africa/Casablanca"

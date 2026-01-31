@@ -1,33 +1,24 @@
 "use client"
 
-import { useState } from "react"
 import { useTranslation } from "react-i18next"
 import { Button } from "@/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { Globe } from "lucide-react"
+import { LANG_STORAGE_KEY } from "@/lib/i18n"
 
 const languages = [
-  { code: "en", name: "English", flag: "🇺🇸" },
   { code: "fr", name: "Français", flag: "🇫🇷" },
   { code: "ar", name: "العربية", flag: "🇲🇦" },
+  { code: "en", name: "English", flag: "🇺🇸" },
 ]
 
 export function LanguageSwitcher() {
   const { i18n } = useTranslation()
-  const [currentLang, setCurrentLang] = useState(i18n.language || "en")
+  const currentLang = i18n.language || "fr"
 
   const changeLanguage = (langCode: string) => {
     i18n.changeLanguage(langCode)
-    setCurrentLang(langCode)
-
-    // Set RTL for Arabic
-    if (langCode === "ar") {
-      document.documentElement.dir = "rtl"
-      document.documentElement.lang = "ar"
-    } else {
-      document.documentElement.dir = "ltr"
-      document.documentElement.lang = langCode
-    }
+    window.localStorage.setItem(LANG_STORAGE_KEY, langCode)
   }
 
   const currentLanguage = languages.find((lang) => lang.code === currentLang)

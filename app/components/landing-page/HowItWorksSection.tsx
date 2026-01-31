@@ -3,15 +3,19 @@
 
 import { motion } from "framer-motion"
 import { Badge } from "@/components/ui/badge"
-import { FileText, Rocket, Target, Award } from "lucide-react"
-import { HowItWorksStep } from "@/lib/types"
+import { Rocket, FileText, Palette, Megaphone } from "lucide-react"
+import { useTranslation } from "react-i18next"
 
-interface HowItWorksSectionProps {
-  t: (key: string) => string
-  howItWorks: HowItWorksStep[]
-}
+const STEPS = [
+  { step: 1, key: "select_services", icon: FileText, color: "bg-gradient-to-br from-blue-500 to-blue-600" },
+  { step: 2, key: "fill_form", icon: Palette, color: "bg-gradient-to-br from-purple-500 to-purple-600" },
+  { step: 3, key: "we_handle", icon: Rocket, color: "bg-gradient-to-br from-green-500 to-green-600" },
+  { step: 4, key: "you_grow", icon: Megaphone, color: "bg-gradient-to-br from-orange-500 to-orange-600" },
+] as const
 
-export function HowItWorksSection({ t, howItWorks }: HowItWorksSectionProps) {
+export function HowItWorksSection() {
+  const { t } = useTranslation()
+
   return (
     <section id="how-it-works" className="py-20 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4">
@@ -24,16 +28,14 @@ export function HowItWorksSection({ t, howItWorks }: HowItWorksSectionProps) {
         >
           <Badge className="mb-4 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 border-purple-200">
             <Rocket className="w-4 h-4 mr-2" />
-            How It Works
+            {t("how_it_works.badge")}
           </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">Simple 4-Step Process</h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Get your business up and running in no time with our streamlined process
-          </p>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">{t("how_it_works.title")}</h2>
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">{t("how_it_works.subtitle")}</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {howItWorks.map((step, index) => (
+          {STEPS.map((step, index) => (
             <motion.div
               key={step.key}
               initial={{ opacity: 0, y: 20 }}
@@ -60,7 +62,7 @@ export function HowItWorksSection({ t, howItWorks }: HowItWorksSectionProps) {
                 {t(`how_it_works.steps.${step.key}.description`)}
               </p>
 
-              {index < howItWorks.length - 1 && (
+              {index < STEPS.length - 1 && (
                 <div className="hidden lg:block absolute top-10 -right-4 w-8 h-0.5 bg-gradient-to-r from-gray-300 to-transparent"></div>
               )}
             </motion.div>

@@ -4,18 +4,17 @@
 import { motion } from "framer-motion"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Dialog, DialogTrigger } from "@/components/ui/dialog"
-import { ArrowRight, Building2, CheckCircle, Globe, Sparkles, Star, TrendingUp, Users } from "lucide-react"
+import Link from "next/link"
+import { ArrowRight, CheckCircle, Globe, Sparkles, Star, TrendingUp, Users, Laptop } from "lucide-react"
+import { useTranslation } from "react-i18next"
+import { useQuoteDialog } from "@/components/quote/QuoteDialogProvider"
 
-interface HeroSectionProps {
-  t: (key: string) => string
-  isQuoteModalOpen: boolean
-  setIsQuoteModalOpen: (open: boolean) => void
-}
+export function HeroSection() {
+  const { t } = useTranslation()
+  const { openQuote } = useQuoteDialog()
 
-export function HeroSection({ t, isQuoteModalOpen, setIsQuoteModalOpen }: HeroSectionProps) {
   return (
-    <section className="relative py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 overflow-hidden">
+    <section className="relative py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-950 dark:via-blue-950 dark:to-indigo-950 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 right-10 w-72 h-72 bg-gradient-to-br from-blue-400/10 to-indigo-400/10 rounded-full blur-3xl"></div>
@@ -28,17 +27,17 @@ export function HeroSection({ t, isQuoteModalOpen, setIsQuoteModalOpen }: HeroSe
           {/* Left Content */}
           <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
             <div className="flex items-center space-x-2 mb-6">
-              <Badge className="bg-green-100 text-green-700 border-green-200">
+              <Badge className="bg-green-100 text-green-700 border-green-200 dark:bg-green-950/30 dark:text-green-200 dark:border-green-900/50">
                 <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                Trusted Platform
+                {t("hero.badge_primary")}
               </Badge>
-              <Badge variant="outline" className="border-blue-200 text-blue-700">
+              <Badge variant="outline" className="border-blue-200 text-blue-700 dark:border-blue-900/50 dark:text-blue-200">
                 <Star className="w-3 h-3 mr-1 fill-current" />
-                10+ Happy Clients
+                {t("hero.badge_secondary")}
               </Badge>
             </div>
 
-            <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+            <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
               {t("hero.main_title")}{" "}
               <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
                 {t("hero.highlight")}
@@ -46,43 +45,39 @@ export function HeroSection({ t, isQuoteModalOpen, setIsQuoteModalOpen }: HeroSe
               {t("hero.location")}
             </h1>
 
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">{t("hero.description")}</p>
+            <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">{t("hero.description")}</p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <Dialog open={isQuoteModalOpen} onOpenChange={setIsQuoteModalOpen}>
-                <DialogTrigger asChild>
-                  <Button
-                    size="lg"
-                    className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-                  >
-                    <Sparkles className="mr-2 h-5 w-5" />
-                    {t("hero.cta_primary")}
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </DialogTrigger>
-              </Dialog>
+              <Button
+                size="lg"
+                onClick={openQuote}
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                <Sparkles className="mr-2 h-5 w-5" />
+                {t("hero.cta_primary")}
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
 
-              <Dialog open={isQuoteModalOpen} onOpenChange={setIsQuoteModalOpen}>
-                <DialogTrigger asChild>
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="border-2 border-gray-300 hover:border-blue-300 px-8 py-4 text-lg rounded-xl bg-transparent"
-                  >
-                    <Users className="mr-2 h-5 w-5" />
-                    {t("hero.cta_secondary")}
-                  </Button>
-                </DialogTrigger>
-              </Dialog>
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="border-2 border-gray-300 hover:border-blue-300 px-8 py-4 text-lg rounded-xl bg-transparent"
+              >
+                <Link href="/portfolio">
+                  <Users className="mr-2 h-5 w-5" />
+                  {t("hero.cta_secondary")}
+                </Link>
+              </Button>
             </div>
 
             <div className="grid grid-cols-3 gap-6 text-center">
               <div>
-                <div className="text-3xl font-bold text-blue-600 mb-1">100+</div>
+                <div className="text-3xl font-bold text-blue-600 mb-1">5+</div>
                 <div className="text-sm text-gray-600">{t("hero.stats.businesses")}</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-green-600 mb-1">98%</div>
+                <div className="text-3xl font-bold text-green-600 mb-1">FR/AR</div>
                 <div className="text-sm text-gray-600">{t("hero.stats.success")}</div>
               </div>
               <div>
@@ -105,11 +100,11 @@ export function HeroSection({ t, isQuoteModalOpen, setIsQuoteModalOpen }: HeroSe
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center space-x-3">
                     <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-xl flex items-center justify-center">
-                      <Building2 className="h-6 w-6 text-white" />
+                      <Laptop className="h-6 w-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-900">Business Setup</h3>
-                      <p className="text-sm text-gray-500">Complete in 3 days</p>
+                      <h3 className="font-semibold text-gray-900">Projet Digital</h3>
+                      <p className="text-sm text-gray-500">Design → Dev → Launch</p>
                     </div>
                   </div>
                   <Badge className="bg-green-100 text-green-700">Active</Badge>
@@ -117,15 +112,15 @@ export function HeroSection({ t, isQuoteModalOpen, setIsQuoteModalOpen }: HeroSe
 
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-gray-600">Legal Registration</span>
+                    <span className="text-sm text-gray-600">UI/UX Design</span>
                     <CheckCircle className="h-5 w-5 text-green-500" />
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-gray-600">Tax Setup</span>
+                    <span className="text-sm text-gray-600">Développement</span>
                     <CheckCircle className="h-5 w-5 text-green-500" />
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-gray-600">Bank Account</span>
+                    <span className="text-sm text-gray-600">SEO & mise en ligne</span>
                     <div className="w-5 h-5 border-2 border-blue-500 rounded-full animate-spin border-t-transparent"></div>
                   </div>
                 </div>
@@ -152,7 +147,7 @@ export function HeroSection({ t, isQuoteModalOpen, setIsQuoteModalOpen }: HeroSe
               <div className="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-lg p-4 z-20">
                 <div className="flex items-center space-x-2">
                   <TrendingUp className="h-5 w-5 text-green-500" />
-                  <span className="text-sm font-medium">Marketing Active</span>
+                  <span className="text-sm font-medium">Growth Active</span>
                 </div>
               </div>
             </div>
