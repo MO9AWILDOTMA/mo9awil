@@ -15,9 +15,9 @@ export type PolicyDoc = {
 }
 
 const LAST_UPDATED: Localized = {
-  fr: "Dernière mise à jour : 31 janvier 2026",
-  ar: "آخر تحديث: 31 يناير 2026",
-  en: "Last updated: January 31, 2026",
+  fr: "Dernière mise à jour : 2 février 2026",
+  ar: "آخر تحديث: 2 فبراير 2026",
+  en: "Last updated: February 2, 2026",
 }
 
 export const POLICIES: PolicyDoc[] = [
@@ -47,9 +47,21 @@ export const POLICIES: PolicyDoc[] = [
       {
         heading: { fr: "Qui sommes-nous ?", ar: "من نحن؟", en: "Who are we?" },
         body: {
-          fr: ["Mo9awil est une agence digitale basée à Rabat, Maroc.", "Contact : contact@mo9awil.com"],
-          ar: ["مو9اول وكالة رقمية مقرّها الرباط، المغرب.", "للتواصل: contact@mo9awil.com"],
-          en: ["Mo9awil is a digital agency based in Rabat, Morocco.", "Contact: contact@mo9awil.com"],
+          fr: [
+            "Mo9awil est le site web exploité par ACHRAF CONSEIL (SARL), société marocaine.",
+            "Siège social : AV MED V IMM 202 APP N°03 HAY KARIMA, Salé, Maroc.",
+            "Contact : contact@mo9awil.com",
+          ],
+          ar: [
+            "مو9اول هو موقع الويب الذي تشغّله شركة ACHRAF CONSEIL (شركة ذات مسؤولية محدودة - SARL) بالمغرب.",
+            "المقر الاجتماعي: AV MED V IMM 202 APP N°03 HAY KARIMA, Salé, Maroc.",
+            "للتواصل: contact@mo9awil.com",
+          ],
+          en: [
+            "Mo9awil is a website operated by ACHRAF CONSEIL (SARL), a Moroccan limited liability company.",
+            "Registered office: AV MED V IMM 202 APP N°03 HAY KARIMA, Salé, Morocco.",
+            "Contact: contact@mo9awil.com",
+          ],
         },
       },
       {
@@ -125,13 +137,42 @@ export const POLICIES: PolicyDoc[] = [
     lastUpdated: LAST_UPDATED,
     intro: {
       fr: [
-        "Ces Conditions régissent l’utilisation du site mo9awil.ma et, le cas échéant, la relation de prestation entre Mo9awil et ses clients.",
+        "Ces Conditions régissent l’utilisation du site mo9awil.ma (le « Site »), exploité par ACHRAF CONSEIL (SARL) sous la marque Mo9awil, et, le cas échéant, la relation de prestation avec ses clients.",
         "En utilisant ce site, vous acceptez ces Conditions.",
       ],
-      ar: ["تنظم هذه الشروط استخدام موقع mo9awil.ma وعلاقة الخدمة بين مو9اول والعميل عند الاقتضاء.", "باستخدامك للموقع فإنك توافق على هذه الشروط."],
-      en: ["These Terms govern the use of mo9awil.ma and, where applicable, service engagements with Mo9awil.", "By using this website, you agree to these Terms."],
+      ar: [
+        "تنظم هذه الشروط استخدام موقع mo9awil.ma («الموقع») الذي تشغّله شركة ACHRAF CONSEIL (SARL) تحت علامة Mo9awil، وعلاقة تقديم الخدمات عند الاقتضاء.",
+        "باستخدامك للموقع فإنك توافق على هذه الشروط.",
+      ],
+      en: [
+        "These Terms govern your use of mo9awil.ma (the “Website”), operated by ACHRAF CONSEIL (SARL) under the Mo9awil brand, and, where applicable, service engagements.",
+        "By using this Website, you agree to these Terms.",
+      ],
     },
     sections: [
+      {
+        heading: { fr: "Éditeur du site", ar: "مشغل الموقع", en: "Website operator" },
+        body: {
+          fr: [
+            "Site : Mo9awil (mo9awil.ma)",
+            "Société : ACHRAF CONSEIL — Société à Responsabilité Limitée (SARL)",
+            "Siège social : AV MED V IMM 202 APP N°03 HAY KARIMA, Salé, Maroc",
+            "Contact : contact@mo9awil.com",
+          ],
+          ar: [
+            "الموقع: Mo9awil (mo9awil.ma)",
+            "الشركة: ACHRAF CONSEIL — شركة ذات مسؤولية محدودة (SARL)",
+            "المقر الاجتماعي: AV MED V IMM 202 APP N°03 HAY KARIMA, Salé, Maroc",
+            "للتواصل: contact@mo9awil.com",
+          ],
+          en: [
+            "Website: Mo9awil (mo9awil.ma)",
+            "Company: ACHRAF CONSEIL — SARL (limited liability company)",
+            "Registered office: AV MED V IMM 202 APP N°03 HAY KARIMA, Salé, Morocco",
+            "Contact: contact@mo9awil.com",
+          ],
+        },
+      },
       {
         heading: { fr: "Services", ar: "الخدمات", en: "Services" },
         body: {
@@ -325,4 +366,3 @@ export function getPolicy(slug: string) {
 export function getPolicyParams() {
   return POLICIES.map((p) => ({ slug: p.slug }))
 }
-
