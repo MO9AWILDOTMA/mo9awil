@@ -5,11 +5,11 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Sparkles } from "lucide-react"
 import { useTranslation } from "react-i18next"
-import { useQuoteDialog } from "@/components/quote/QuoteDialogProvider"
+import { getWhatsAppUrl } from "@/lib/whatsapp"
 
 export function CTASection() {
   const { t } = useTranslation()
-  const { openQuote } = useQuoteDialog()
+  const whatsappHref = getWhatsAppUrl("Salam, je veux un devis pour mon projet")
 
   return (
     <section
@@ -28,12 +28,14 @@ export function CTASection() {
 
           <Button
             size="lg"
-            onClick={openQuote}
+            asChild
             className="bg-white cursor-pointer text-blue-700 hover:bg-gray-100 px-8 py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
           >
-            <Sparkles className="mr-2 h-5 w-5" />
-            {t("cta.button")}
-            <ArrowRight className="ml-2 h-5 w-5" />
+            <a href={whatsappHref} target="_blank" rel="noreferrer">
+              <Sparkles className="mr-2 h-5 w-5" />
+              {t("cta.button")}
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </a>
           </Button>
         </motion.div>
       </div>

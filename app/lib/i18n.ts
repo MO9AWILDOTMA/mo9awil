@@ -9,6 +9,10 @@ const resources = {
       nav: {
         home: "Accueil",
         services: "Services",
+        offers: "Offres",
+        restaurants: "Restaurants",
+        clinics: "Cliniques",
+        ecommerce: "E-commerce",
         portfolio: "Portfolio",
         blog: "Blog",
         about: "À Propos",
@@ -16,17 +20,17 @@ const resources = {
         contact: "Contact",
         ai_automation: "Automatisation IA",
         get_quote: "Demander un devis",
+        whatsapp: "Parler sur WhatsApp",
       },
       hero: {
         badge_primary: "Agence digitale à Rabat",
         badge_secondary: "5+ projets live",
         main_title: "Transformez votre",
-        highlight: "Présence Digitale",
+        highlight: "présence digitale",
         location: "au Maroc",
-        description:
-          "Développement web & app, image de marque, marketing digital et automatisation IA. Un partenaire local pour accélérer votre croissance.",
-        cta_primary: "Démarrer votre projet",
-        cta_secondary: "Voir nos réalisations",
+        description: "Sites rapides, design moderne, SEO et automatisation — orienté résultats.",
+        cta_primary: "Parler sur WhatsApp",
+        cta_secondary: "Voir des exemples",
         stats: {
           businesses: "Projets livrés",
           success: "Multilingue",
@@ -177,7 +181,7 @@ const resources = {
       cta: {
         title: "Prêt à transformer votre présence digitale ?",
         description: "Parlez-nous de votre projet et recevez une proposition claire et rapide.",
-        button: "Obtenir un devis",
+        button: "Parler sur WhatsApp",
       },
       quote: {
         title: "Demande de devis",
@@ -241,6 +245,10 @@ const resources = {
       nav: {
         home: "الرئيسية",
         services: "الخدمات",
+        offers: "العروض",
+        restaurants: "مطاعم",
+        clinics: "عيادات",
+        ecommerce: "تجارة إلكترونية",
         portfolio: "أعمالنا",
         blog: "مدونة",
         about: "حولنا",
@@ -248,6 +256,7 @@ const resources = {
         contact: "اتصل بنا",
         ai_automation: "أتمتة بالذكاء الاصطناعي",
         get_quote: "اطلب عرض سعر",
+        whatsapp: "واتساب",
       },
       hero: {
         badge_primary: "وكالة رقمية في الرباط",
@@ -451,6 +460,10 @@ const resources = {
       nav: {
         home: "Home",
         services: "Services",
+        offers: "Offers",
+        restaurants: "Restaurants",
+        clinics: "Clinics",
+        ecommerce: "E-commerce",
         portfolio: "Portfolio",
         blog: "Blog",
         about: "About",
@@ -458,6 +471,7 @@ const resources = {
         contact: "Contact",
         ai_automation: "AI Automation",
         get_quote: "Get a Quote",
+        whatsapp: "WhatsApp",
       },
       hero: {
         badge_primary: "Digital agency in Rabat",

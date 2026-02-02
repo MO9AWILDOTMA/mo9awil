@@ -3,11 +3,10 @@
 import { useTranslation } from "react-i18next"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { useQuoteDialog } from "@/components/quote/QuoteDialogProvider"
+import { WhatsAppButton } from "@/components/cta/WhatsAppButton"
 
 export function ContactPage() {
   const { t } = useTranslation()
-  const { openQuote } = useQuoteDialog()
 
   return (
     <div className="min-h-screen bg-background">
@@ -19,9 +18,14 @@ export function ContactPage() {
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">{t("nav.contact")}</h1>
           <p className="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl">{t("cta.description")}</p>
 
-          <div className="mt-6">
-            <Button onClick={openQuote} className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700">
-              {t("nav.get_quote")}
+          <div className="mt-6 flex flex-col sm:flex-row gap-3">
+            <WhatsAppButton
+              message="Salam, je veux un devis pour mon projet."
+              className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white"
+              size="lg"
+            />
+            <Button size="lg" variant="outline" disabled className="justify-between">
+              Réserver un Google Meet (bientôt)
             </Button>
           </div>
         </div>
@@ -39,6 +43,17 @@ export function ContactPage() {
               <div>
                 <div className="text-sm text-muted-foreground">Téléphone</div>
                 <div className="font-medium">+212 530-306254</div>
+              </div>
+              <div>
+                <div className="text-sm text-muted-foreground">WhatsApp</div>
+                <a
+                  className="font-medium text-blue-700 hover:underline dark:text-blue-200"
+                  href="https://wa.me/212604627690"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  +212 604-627690
+                </a>
               </div>
               <div>
                 <div className="text-sm text-muted-foreground">Adresse</div>
@@ -63,4 +78,3 @@ export function ContactPage() {
     </div>
   )
 }
-

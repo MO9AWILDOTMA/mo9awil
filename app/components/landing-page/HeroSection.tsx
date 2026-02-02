@@ -7,11 +7,11 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { ArrowRight, CheckCircle, Globe, Sparkles, Star, TrendingUp, Users, Laptop } from "lucide-react"
 import { useTranslation } from "react-i18next"
-import { useQuoteDialog } from "@/components/quote/QuoteDialogProvider"
+import { getWhatsAppUrl } from "@/lib/whatsapp"
 
 export function HeroSection() {
   const { t } = useTranslation()
-  const { openQuote } = useQuoteDialog()
+  const whatsappHref = getWhatsAppUrl("Salam, je veux un devis pour mon projet")
 
   return (
     <section className="relative py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-950 dark:via-blue-950 dark:to-indigo-950 overflow-hidden">
@@ -50,12 +50,14 @@ export function HeroSection() {
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <Button
                 size="lg"
-                onClick={openQuote}
+                asChild
                 className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                <Sparkles className="mr-2 h-5 w-5" />
-                {t("hero.cta_primary")}
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <a href={whatsappHref} target="_blank" rel="noreferrer">
+                  <Sparkles className="mr-2 h-5 w-5" />
+                  {t("hero.cta_primary")}
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
               </Button>
 
               <Button
@@ -64,7 +66,7 @@ export function HeroSection() {
                 size="lg"
                 className="border-2 border-gray-300 hover:border-blue-300 px-8 py-4 text-lg rounded-xl bg-transparent"
               >
-                <Link href="/portfolio">
+                <Link href="/#exemples">
                   <Users className="mr-2 h-5 w-5" />
                   {t("hero.cta_secondary")}
                 </Link>

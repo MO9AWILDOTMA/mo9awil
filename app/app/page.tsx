@@ -1,7 +1,9 @@
 import { HeroSection } from "@/components/landing-page/HeroSection"
+import { OfferTeaserSection } from "@/components/landing-page/OfferTeaserSection"
+import { NichesSection } from "@/components/landing-page/NichesSection"
 import { PartnersSection } from "@/components/landing-page/PartnersSection"
 import { ServicesSection } from "@/components/landing-page/ServicesSection"
-import { PortfolioShowcaseSection } from "@/components/landing-page/PortfolioShowcaseSection"
+import { ExamplesSection } from "@/components/landing-page/ExamplesSection"
 import { AIAutomationSection } from "@/components/landing-page/AIAutomationSection"
 import { WhyChooseUsSection } from "@/components/landing-page/WhyChooseUsSection"
 import { HowItWorksSection } from "@/components/landing-page/HowItWorksSection"
@@ -25,8 +27,10 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
       <HeroSection />
+      <OfferTeaserSection />
+      <NichesSection />
+      <ExamplesSection />
       <ServicesSection />
-      <PortfolioShowcaseSection />
       <AIAutomationSection />
       <PartnersSection partners={partners} />
       <WhyChooseUsSection />

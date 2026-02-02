@@ -8,8 +8,8 @@ import { useTranslation } from "react-i18next"
 import { Button } from "@/components/ui/button"
 import { LanguageSwitcher } from "@/components/language-switcher"
 import { ThemeToggle } from "@/components/site/ThemeToggle"
-import { useQuoteDialog } from "@/components/quote/QuoteDialogProvider"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { getWhatsAppUrl } from "@/lib/whatsapp"
 
 type NavItem = { href: string; label: string; external?: boolean }
 
@@ -36,15 +36,14 @@ function NavLink({ href, label, external }: NavItem) {
 
 export function SiteHeader() {
   const { t } = useTranslation()
-  const { openQuote } = useQuoteDialog()
   const [mobileOpen, setMobileOpen] = useState(false)
+  const whatsappHref = getWhatsAppUrl("Salam, je veux un devis pour mon projet")
 
   const primaryNav: NavItem[] = [
-    { href: "/", label: t("nav.home") },
-    { href: "/portfolio", label: t("nav.portfolio") },
-    { href: "/blog", label: t("nav.blog") },
-    { href: "/about", label: t("nav.about") },
-    { href: "/pricing", label: t("nav.pricing") },
+    { href: "/offre", label: t("nav.offers") },
+    { href: "/niches/restaurants", label: t("nav.restaurants") },
+    { href: "/niches/cliniques", label: t("nav.clinics") },
+    { href: "/niches/ecommerce", label: t("nav.ecommerce") },
     { href: "/contact", label: t("nav.contact") },
   ]
 
@@ -97,8 +96,10 @@ export function SiteHeader() {
         <div className="hidden md:flex items-center gap-3">
           <ThemeToggle />
           <LanguageSwitcher />
-          <Button onClick={openQuote} className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700">
-            {t("nav.get_quote")}
+          <Button asChild className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700">
+            <a href={whatsappHref} target="_blank" rel="noreferrer">
+              {t("nav.whatsapp")}
+            </a>
           </Button>
         </div>
 
@@ -132,8 +133,10 @@ export function SiteHeader() {
                 <ThemeToggle />
                 <LanguageSwitcher />
               </div>
-              <Button size="sm" onClick={() => { openQuote(); setMobileOpen(false) }}>
-                {t("nav.get_quote")}
+              <Button asChild size="sm" onClick={() => setMobileOpen(false)}>
+                <a href={whatsappHref} target="_blank" rel="noreferrer">
+                  {t("nav.whatsapp")}
+                </a>
               </Button>
             </div>
           </div>
