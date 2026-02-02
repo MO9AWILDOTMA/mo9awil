@@ -1,4 +1,4 @@
-export const WHATSAPP_PHONE = "212604627690"
+export const WHATSAPP_PHONE = "212718965268"
 
 export function getWhatsAppUrl(message?: string) {
   const baseUrl = `https://wa.me/${WHATSAPP_PHONE}`
